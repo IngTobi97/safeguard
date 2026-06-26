@@ -66,6 +66,16 @@
         .teilnehmende-row:nth-child(n+9){border-color:var(--border);background:var(--bg-white);}
         .teilnehmende-nr{display:none;font-size:0.75rem;font-weight:700;color:var(--text-medium);margin-bottom:4px;}
         @media(max-width:640px){.teilnehmende-nr{display:block;}}
+
+        /* Verteiler */
+        .verteiler-section{background:var(--bg-white);border-radius:var(--radius);padding:20px;margin-bottom:16px;border:1px solid var(--border);box-shadow:var(--shadow-sm);}
+        .verteiler-section h3{font-size:0.9rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--primary-border);}
+        .verteiler-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;}
+        .verteiler-row{display:flex;align-items:center;gap:8px;}
+        .verteiler-row input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.875rem;font-family:inherit;}
+        .verteiler-row input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(47,133,90,0.1);}
+
+        /* Mangel Block */
         .mangel-block{background:var(--bg-white);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow-sm);margin-bottom:16px;overflow:visible;}
         .mangel-header{background:var(--primary-bg);border-bottom:1px solid var(--primary-border);padding:10px 16px;display:flex;align-items:center;gap:10px;border-radius:var(--radius) var(--radius) 0 0;}
         .mangel-nr{font-size:1rem;font-weight:700;color:var(--primary-dark);min-width:28px;flex-shrink:0;}
@@ -76,49 +86,19 @@
         .mangel-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
         @media(max-width:700px){.mangel-row{grid-template-columns:1fr;}}
 
-        /* ===== CUSTOM DROPDOWN ===== */
+        /* Custom Dropdown */
         .prio-dropdown{position:relative;display:inline-block;min-width:200px;}
-        .prio-dropdown-trigger{
-            display:flex;align-items:center;gap:8px;
-            padding:7px 32px 7px 10px;border-radius:20px;
-            border:1px solid var(--border);background:var(--bg-white);
-            cursor:pointer;font-size:0.8rem;font-weight:600;font-family:inherit;
-            position:relative;user-select:none;transition:all 0.2s;white-space:nowrap;
-        }
-        .prio-dropdown-trigger::after{
-            content:'';position:absolute;right:10px;top:50%;transform:translateY(-50%);
-            width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;
-            border-top:5px solid currentColor;opacity:0.6;
-        }
+        .prio-dropdown-trigger{display:flex;align-items:center;gap:8px;padding:7px 32px 7px 10px;border-radius:20px;border:1px solid var(--border);background:var(--bg-white);cursor:pointer;font-size:0.8rem;font-weight:600;font-family:inherit;position:relative;user-select:none;transition:all 0.2s;white-space:nowrap;}
+        .prio-dropdown-trigger::after{content:'';position:absolute;right:10px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:0.6;}
         .prio-circle{width:12px;height:12px;border-radius:50%;flex-shrink:0;display:inline-block;}
         .prio-trigger-1{background:var(--prio-1-bg);color:var(--prio-1-color);border-color:var(--prio-1-border);}
         .prio-trigger-2{background:var(--prio-2-bg);color:var(--prio-2-color);border-color:var(--prio-2-border);}
         .prio-trigger-3{background:var(--prio-3-bg);color:var(--prio-3-color);border-color:var(--prio-3-border);}
         .prio-trigger-4{background:var(--prio-4-bg);color:var(--prio-4-color);border-color:var(--prio-4-border);}
         .prio-trigger-5{background:var(--prio-5-bg);color:var(--prio-5-color);border-color:var(--prio-5-border);}
-
-        /* Dropdown Liste – absolut relativ zum .prio-dropdown, KEIN fixed mehr */
-        .prio-dropdown-list{
-            display:none;
-            position:absolute;
-            top:calc(100% + 4px);
-            left:0;
-            z-index:9999;
-            background:var(--bg-white);
-            border:1px solid var(--border);
-            border-radius:var(--radius);
-            box-shadow:var(--shadow-lg);
-            min-width:220px;
-            overflow:hidden;
-        }
+        .prio-dropdown-list{display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:9999;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:220px;overflow:hidden;}
         .prio-dropdown-list.open{display:block;}
-        .prio-dropdown-option{
-            display:flex;align-items:center;gap:8px;
-            padding:10px 14px;cursor:pointer;
-            font-size:0.82rem;font-weight:500;
-            transition:background 0.15s;
-            border-bottom:1px solid var(--border);
-        }
+        .prio-dropdown-option{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;font-size:0.82rem;font-weight:500;transition:background 0.15s;border-bottom:1px solid var(--border);}
         .prio-dropdown-option:last-child{border-bottom:none;}
         .prio-dropdown-option:hover{background:var(--bg-gray);}
         .prio-dropdown-option.selected{background:var(--primary-bg);}
@@ -135,6 +115,8 @@
         .foto-edit{position:absolute;bottom:-6px;right:-6px;background:var(--primary);color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:0.65rem;display:flex;align-items:center;justify-content:center;}
         .add-mangel-btn{width:100%;padding:14px;border:2px dashed var(--primary-border);border-radius:var(--radius);background:var(--primary-bg);color:var(--primary);font-size:0.9rem;font-weight:500;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:80px;}
         .add-mangel-btn:hover{background:var(--primary-border);}
+
+        /* TB Tabelle */
         .tb-filter-bar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
         .tb-filter-bar input,.tb-filter-bar select{padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.875rem;font-family:inherit;background:var(--bg-white);}
         .tb-filter-bar input{flex:1;min-width:180px;}.tb-filter-bar select{min-width:160px;cursor:pointer;}
@@ -148,10 +130,23 @@
         .tb-cell-text.expanded{-webkit-line-clamp:unset;overflow:visible;}
         .tb-expand-hint{font-size:0.72rem;color:var(--primary);margin-top:3px;cursor:pointer;}
         .tag{display:inline-block;background:var(--primary-bg);color:var(--primary-dark);border:1px solid var(--primary-border);border-radius:12px;padding:2px 8px;font-size:0.75rem;margin:2px;white-space:nowrap;}
+
+        /* Einstellungen Unterordner */
+        .settings-nav{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+        .settings-nav-btn{padding:10px 20px;border-radius:var(--radius-sm);border:2px solid var(--border);background:var(--bg-white);cursor:pointer;font-size:0.875rem;font-weight:500;color:var(--text-medium);transition:all 0.2s;display:flex;align-items:center;gap:8px;}
+        .settings-nav-btn:hover{border-color:var(--primary);color:var(--primary);}
+        .settings-nav-btn.active{border-color:var(--primary);background:var(--primary-bg);color:var(--primary);}
+        .settings-sub{display:none;}.settings-sub.active{display:block;}
+        .settings-section{background:var(--bg-white);border-radius:var(--radius);padding:20px;margin-bottom:16px;border:1px solid var(--border);}
+        .settings-section h3{font-size:0.9rem;font-weight:600;color:var(--primary);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--primary-border);text-transform:uppercase;letter-spacing:0.5px;}
+        .upload-area{border:2px dashed var(--border);border-radius:var(--radius);padding:24px;text-align:center;cursor:pointer;transition:all 0.2s;}
+        .upload-area:hover{border-color:var(--primary);background:var(--primary-bg);}
+
+        /* Modals */
         .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1000;align-items:center;justify-content:center;padding:16px;}
         .modal-overlay.active{display:flex;}
         .modal{background:var(--bg-white);border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;max-width:600px;max-height:90vh;overflow-y:auto;}
-        .modal-sm{max-width:420px;}.modal-md{max-width:500px;}
+        .modal-sm{max-width:420px;}.modal-md{max-width:500px;}.modal-lg{max-width:700px;}
         .modal-header{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--bg-white);z-index:1;}
         .modal-header h3{font-size:1rem;font-weight:600;}.modal-body{padding:20px;}
         .modal-footer{padding:16px 20px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:flex-end;position:sticky;bottom:0;background:var(--bg-white);}
@@ -169,11 +164,11 @@
         .drop-zone .dz-file{font-size:0.8rem;color:var(--primary);font-weight:600;margin-top:6px;}
         .import-result{background:var(--primary-bg);border:1px solid var(--primary-border);border-radius:var(--radius-sm);padding:12px 16px;margin-top:12px;font-size:0.875rem;}
         .import-result.error{background:var(--danger-light);border-color:#FEB2B2;}
-        .settings-section{background:var(--bg-white);border-radius:var(--radius);padding:20px;margin-bottom:16px;border:1px solid var(--border);}
-        .settings-section h3{font-size:0.9rem;font-weight:600;color:var(--primary);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--primary-border);text-transform:uppercase;letter-spacing:0.5px;}
-        .upload-area{border:2px dashed var(--border);border-radius:var(--radius);padding:24px;text-align:center;cursor:pointer;transition:all 0.2s;}
-        .upload-area:hover{border-color:var(--primary);background:var(--primary-bg);}
+
+        /* Action Bar */
         .action-bar{position:sticky;bottom:0;background:var(--bg-white);border-top:1px solid var(--border);padding:14px 24px;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;box-shadow:0 -4px 12px rgba(0,0,0,0.06);margin:0 -24px;}
+
+        /* Kamera */
         .kamera-overlay{display:none;position:fixed;inset:0;background:#000;z-index:2000;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
         .kamera-overlay.active{display:flex;}
         #kamera-video{width:100%;max-width:100%;height:100vh;object-fit:cover;transform-origin:center center;transition:transform 0.1s;}
@@ -186,6 +181,8 @@
         .kamera-zoom-indicator{position:absolute;top:20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.5);color:white;padding:4px 12px;border-radius:12px;font-size:0.85rem;font-weight:600;opacity:0;transition:opacity 0.3s;}
         .kamera-zoom-indicator.visible{opacity:1;}
         .kamera-hint{position:absolute;bottom:110px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.5);font-size:0.75rem;}
+
+        /* Crop */
         .crop-overlay{display:none;position:fixed;inset:0;background:#000;z-index:3000;flex-direction:column;}
         .crop-overlay.active{display:flex;}
         .crop-header{background:rgba(0,0,0,0.8);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
@@ -217,6 +214,7 @@
         .foto-confirm-btn:active{transform:scale(0.9);}.foto-confirm-btn.accept{background:#2F855A;color:white;}.foto-confirm-btn.reject{background:#E53E3E;color:white;}
         .foto-confirm-actions-row{display:flex;gap:12px;margin-top:12px;}
         .foto-confirm-edit-btn{background:rgba(255,255,255,0.15);color:white;border:none;border-radius:var(--radius-sm);padding:8px 16px;cursor:pointer;font-size:0.85rem;}
+
         @media(max-width:480px){.view{padding:16px;}.action-bar{padding:12px 16px;margin:0 -16px;}.begehung-item{flex-direction:column;align-items:flex-start;}}
         ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
     </style>
@@ -226,15 +224,17 @@
     <div><div class="logo-text">SafeGuard</div><div class="subtitle">Arbeitsschutz Dokumentation</div></div>
 </header>
 
+<!-- HAUPTMENÜ -->
 <div class="view active" id="view-home">
     <div class="welcome-text"><h2>Willkommen</h2><p>Was möchten Sie heute tun?</p></div>
     <div class="menu-grid">
         <div class="menu-card" onclick="showView('view-begehungen')"><div class="icon">📋</div><h2>Begehungen</h2><p>Begehungsprotokolle erstellen und verwalten</p></div>
         <div class="menu-card" onclick="showView('view-textbausteine')"><div class="icon">📝</div><h2>Textbausteine</h2><p>Textbaustein-Datenbank verwalten</p></div>
-        <div class="menu-card" onclick="showView('view-einstellungen')"><div class="icon">⚙️</div><h2>Einstellungen</h2><p>Logo, Unterschrift und Firmendaten</p></div>
+        <div class="menu-card" onclick="showView('view-einstellungen')"><div class="icon">⚙️</div><h2>Einstellungen</h2><p>Signatur, Logo, Kontaktbuch</p></div>
     </div>
 </div>
 
+<!-- BEGEHUNGSLISTE -->
 <div class="view" id="view-begehungen">
     <div class="page-header">
         <button class="btn btn-ghost btn-sm" onclick="showView('view-home')">← Zurück</button>
@@ -244,6 +244,7 @@
     <div id="begehungen-list-container"></div>
 </div>
 
+<!-- BEGEHUNG FORMULAR -->
 <div class="view" id="view-begehung-form">
     <div class="page-header">
         <button class="btn btn-ghost btn-sm" onclick="showView('view-begehungen')">← Zurück</button>
@@ -258,11 +259,25 @@
             <div class="form-group"><label>PLZ + Ort</label><input type="text" id="f-ort" placeholder="12345 Musterstadt"></div>
         </div>
     </div>
+
+    <!-- TEILNEHMENDE -->
     <div class="form-section">
         <h3>👥 Teilnehmende</h3>
         <div class="teilnehmende-list" id="teilnehmende-list"></div>
-        <button class="btn btn-ghost btn-sm" onclick="addTeilnehmende()">+ Teilnehmende hinzufügen</button>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-ghost btn-sm" onclick="addTeilnehmende()">+ Teilnehmende hinzufügen</button>
+            <button class="btn btn-ghost btn-sm" onclick="openKontaktSuche()">📇 Aus Kontaktbuch</button>
+        </div>
     </div>
+
+    <!-- VERTEILER -->
+    <div class="verteiler-section">
+        <h3>📨 Verteiler (E-Mail)</h3>
+        <p style="font-size:0.8rem;color:var(--text-light);margin-bottom:10px">E-Mail-Adressen der Empfänger des Protokolls</p>
+        <div class="verteiler-list" id="verteiler-list"></div>
+        <button class="btn btn-ghost btn-sm" onclick="addVerteilerEintrag('')">+ E-Mail hinzufügen</button>
+    </div>
+
     <div id="maengel-container"></div>
     <button class="add-mangel-btn" onclick="addMangel()"><span style="font-size:1.3rem">+</span> Eintrag hinzufügen</button>
     <div class="action-bar">
@@ -272,12 +287,13 @@
     </div>
 </div>
 
+<!-- TEXTBAUSTEINE -->
 <div class="view" id="view-textbausteine">
     <div class="page-header">
         <button class="btn btn-ghost btn-sm" onclick="showView('view-home')">← Zurück</button>
         <h2>Textbausteine</h2>
-        <button class="btn btn-ghost btn-sm" onclick="downloadVorlage()">📥 Vorlage</button>
-        <button class="btn btn-ghost btn-sm" onclick="openImportModal()">📂 Excel Import</button>
+        <button class="btn btn-ghost btn-sm" onclick="downloadTBVorlage()">📥 Vorlage</button>
+        <button class="btn btn-ghost btn-sm" onclick="openTBImportModal()">📂 Import</button>
         <button class="btn btn-primary" onclick="openTBModal()">+ Neuer Textbaustein</button>
     </div>
     <div class="card"><div class="card-body">
@@ -299,49 +315,86 @@
     </div></div>
 </div>
 
+<!-- EINSTELLUNGEN -->
 <div class="view" id="view-einstellungen">
     <div class="page-header">
         <button class="btn btn-ghost btn-sm" onclick="showView('view-home')">← Zurück</button>
         <h2>Einstellungen</h2>
     </div>
-    <div class="settings-section">
-        <h3>🖼️ Logo</h3>
-        <div class="upload-area" onclick="document.getElementById('logo-input').click()">
-            <div id="logo-preview-container"><div style="font-size:2rem;margin-bottom:8px">🖼️</div><p style="color:var(--text-light);font-size:0.875rem">Logo hochladen</p></div>
-        </div>
-        <input type="file" id="logo-input" accept="image/*" style="display:none" onchange="handleLogoUpload(event)">
-        <div style="margin-top:10px;display:none;gap:8px" id="logo-actions"><button class="btn btn-ghost btn-sm" onclick="removeLogo()">Logo entfernen</button></div>
+    <!-- Navigation zwischen Unterordnern -->
+    <div class="settings-nav">
+        <button class="settings-nav-btn active" id="snav-signatur" onclick="showSettingsSub('signatur')">🖊️ Signatur & Logo</button>
+        <button class="settings-nav-btn" id="snav-kontaktbuch" onclick="showSettingsSub('kontaktbuch')">📇 Kontaktbuch</button>
     </div>
-    <div class="settings-section">
-        <h3>✍️ Unterschrift</h3>
-        <div class="upload-area" onclick="document.getElementById('unterschrift-input').click()">
-            <div id="unterschrift-preview-container"><div style="font-size:2rem;margin-bottom:8px">✍️</div><p style="color:var(--text-light);font-size:0.875rem">Unterschrift hochladen</p></div>
+
+    <!-- SIGNATUR & LOGO -->
+    <div class="settings-sub active" id="ssub-signatur">
+        <div class="settings-section">
+            <h3>🖼️ Logo</h3>
+            <div class="upload-area" onclick="document.getElementById('logo-input').click()">
+                <div id="logo-preview-container"><div style="font-size:2rem;margin-bottom:8px">🖼️</div><p style="color:var(--text-light);font-size:0.875rem">Logo hochladen</p></div>
+            </div>
+            <input type="file" id="logo-input" accept="image/*" style="display:none" onchange="handleLogoUpload(event)">
+            <div style="margin-top:10px;display:none;gap:8px" id="logo-actions"><button class="btn btn-ghost btn-sm" onclick="removeLogo()">Logo entfernen</button></div>
         </div>
-        <input type="file" id="unterschrift-input" accept="image/*" style="display:none" onchange="handleUnterschriftUpload(event)">
-        <div style="margin-top:10px;display:none;gap:8px" id="unterschrift-actions"><button class="btn btn-ghost btn-sm" onclick="removeUnterschrift()">Unterschrift entfernen</button></div>
+        <div class="settings-section">
+            <h3>✍️ Unterschrift</h3>
+            <div class="upload-area" onclick="document.getElementById('unterschrift-input').click()">
+                <div id="unterschrift-preview-container"><div style="font-size:2rem;margin-bottom:8px">✍️</div><p style="color:var(--text-light);font-size:0.875rem">Unterschrift hochladen</p></div>
+            </div>
+            <input type="file" id="unterschrift-input" accept="image/*" style="display:none" onchange="handleUnterschriftUpload(event)">
+            <div style="margin-top:10px;display:none;gap:8px" id="unterschrift-actions"><button class="btn btn-ghost btn-sm" onclick="removeUnterschrift()">Unterschrift entfernen</button></div>
+        </div>
+        <div class="settings-section">
+            <h3>🏢 Firmendaten</h3>
+            <div class="form-grid">
+                <div class="form-group"><label>Name</label><input type="text" id="s-name" placeholder="Max Mustermann"></div>
+                <div class="form-group"><label>Funktion</label><input type="text" id="s-funktion" placeholder="Fachkraft für Arbeitssicherheit"></div>
+                <div class="form-group"><label>Unternehmen</label><input type="text" id="s-firma" placeholder="Muster GmbH"></div>
+                <div class="form-group"><label>Anschrift</label><input type="text" id="s-anschrift" placeholder="Musterstraße 1, 12345 Stadt"></div>
+                <div class="form-group"><label>E-Mail</label><input type="email" id="s-email" placeholder="info@muster.de"></div>
+                <div class="form-group"><label>Telefon</label><input type="tel" id="s-telefon" placeholder="+49 123 456789"></div>
+            </div>
+            <div style="margin-top:16px"><button class="btn btn-primary" onclick="speichereEinstellungen()">💾 Speichern</button></div>
+        </div>
     </div>
-    <div class="settings-section">
-        <h3>🏢 Firmendaten</h3>
-        <div class="form-grid">
-            <div class="form-group"><label>Name</label><input type="text" id="s-name" placeholder="Max Mustermann"></div>
-            <div class="form-group"><label>Funktion</label><input type="text" id="s-funktion" placeholder="Fachkraft für Arbeitssicherheit"></div>
-            <div class="form-group"><label>Unternehmen</label><input type="text" id="s-firma" placeholder="Muster GmbH"></div>
-            <div class="form-group"><label>Anschrift</label><input type="text" id="s-anschrift" placeholder="Musterstraße 1, 12345 Stadt"></div>
-            <div class="form-group"><label>E-Mail</label><input type="email" id="s-email" placeholder="info@muster.de"></div>
-            <div class="form-group"><label>Telefon</label><input type="tel" id="s-telefon" placeholder="+49 123 456789"></div>
+
+    <!-- KONTAKTBUCH -->
+    <div class="settings-sub" id="ssub-kontaktbuch">
+        <div class="page-header" style="margin-bottom:16px">
+            <h2 style="font-size:1rem;flex:1">Kontaktbuch</h2>
+            <button class="btn btn-ghost btn-sm" onclick="downloadKontaktVorlage()">📥 Vorlage</button>
+            <button class="btn btn-ghost btn-sm" onclick="openKontaktImportModal()">📂 Import</button>
+            <button class="btn btn-primary btn-sm" onclick="openKontaktModal()">+ Neuer Kontakt</button>
         </div>
-        <div style="margin-top:16px"><button class="btn btn-primary" onclick="speichereEinstellungen()">💾 Speichern</button></div>
+        <div class="card"><div class="card-body">
+            <div class="tb-filter-bar">
+                <input type="text" id="kb-filter" placeholder="🔍 Kontakte suchen..." oninput="renderKontakte()">
+            </div>
+            <div class="tb-table-wrapper">
+                <table class="tb-table">
+                    <thead><tr>
+                        <th>Firma</th><th>Name</th><th>Funktion</th>
+                        <th>E-Mail</th><th>Telefon</th><th>Aktionen</th>
+                    </tr></thead>
+                    <tbody id="kb-tbody"></tbody>
+                </table>
+            </div>
+            <div id="kb-empty" style="display:none" class="empty-state"><div class="icon">📇</div><p>Noch keine Kontakte.</p></div>
+        </div></div>
     </div>
 </div>
 
-<!-- MODALS -->
+<!-- ===== MODALS ===== -->
+
+<!-- TB Modal -->
 <div class="modal-overlay" id="modal-tb">
     <div class="modal">
         <div class="modal-header"><h3 id="modal-tb-title">Neuer Textbaustein</h3><button class="btn-icon" onclick="closeTBModal()">✕</button></div>
         <div class="modal-body">
-            <div class="form-group" style="margin-bottom:12px"><label>Kategorie *</label><input type="text" id="tb-kategorie" placeholder="z.B. Brandschutz"></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Schlagwörter</label><input type="text" id="tb-schlagwoerter" placeholder="z.B. feuerfest, Kabel"></div>
-            <div class="form-group" style="margin-bottom:12px"><label>Titel *</label><input type="text" id="tb-titel" placeholder="Kurzer Titel..."></div>
+            <div class="form-group" style="margin-bottom:12px"><label>Kategorie *</label><input type="text" id="tb-kategorie"></div>
+            <div class="form-group" style="margin-bottom:12px"><label>Schlagwörter</label><input type="text" id="tb-schlagwoerter" placeholder="kommagetrennt"></div>
+            <div class="form-group" style="margin-bottom:12px"><label>Titel *</label><input type="text" id="tb-titel"></div>
             <div class="form-group" style="margin-bottom:12px"><label>Feststellung *</label><textarea id="tb-feststellung" rows="4"></textarea></div>
             <div class="form-group"><label>Maßnahme *</label><textarea id="tb-massnahme" rows="4"></textarea></div>
             <input type="hidden" id="tb-edit-id">
@@ -353,6 +406,7 @@
     </div>
 </div>
 
+<!-- Confirm Modal -->
 <div class="modal-overlay" id="modal-confirm">
     <div class="modal modal-sm">
         <div class="modal-header"><h3>Bestätigung</h3></div>
@@ -364,6 +418,7 @@
     </div>
 </div>
 
+<!-- TB Suche Modal -->
 <div class="modal-overlay" id="modal-tb-search">
     <div class="modal">
         <div class="modal-header"><h3>🔍 Textbaustein suchen</h3><button class="btn-icon" onclick="closeTBSearch()">✕</button></div>
@@ -375,30 +430,94 @@
     </div>
 </div>
 
-<div class="modal-overlay" id="modal-import">
+<!-- TB Import Modal -->
+<div class="modal-overlay" id="modal-tb-import">
     <div class="modal modal-md">
-        <div class="modal-header"><h3>📂 Excel Import</h3><button class="btn-icon" onclick="closeImportModal()">✕</button></div>
+        <div class="modal-header"><h3>📂 Textbausteine importieren</h3><button class="btn-icon" onclick="closeTBImportModal()">✕</button></div>
         <div class="modal-body">
-            <div class="import-option selected" id="opt-hinzufuegen" onclick="waehleImportModus('hinzufuegen')"><div class="option-icon">➕</div><div><h4>Hinzufügen</h4><p>Bestehende bleiben, neue kommen dazu.</p></div></div>
-            <div class="import-option" id="opt-ersetzen" onclick="waehleImportModus('ersetzen')"><div class="option-icon">🔄</div><div><h4>Ersetzen</h4><p>Alles löschen und neu importieren.</p></div></div>
-            <div class="drop-zone" id="import-drop-zone" onclick="document.getElementById('import-file-input').click()" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+            <div class="import-option selected" id="tb-opt-hinzufuegen" onclick="waehleImportModus('tb','hinzufuegen')"><div class="option-icon">➕</div><div><h4>Hinzufügen</h4><p>Bestehende bleiben, neue kommen dazu.</p></div></div>
+            <div class="import-option" id="tb-opt-ersetzen" onclick="waehleImportModus('tb','ersetzen')"><div class="option-icon">🔄</div><div><h4>Ersetzen</h4><p>Alles löschen und neu importieren.</p></div></div>
+            <div class="drop-zone" id="tb-import-drop-zone" onclick="document.getElementById('tb-import-file').click()" ondragover="handleDragOver(event,'tb-import-drop-zone')" ondragleave="handleDragLeave(event,'tb-import-drop-zone')" ondrop="handleDropImport(event,'tb')">
                 <div class="dz-icon">📊</div><p>Excel-Datei ablegen oder klicken</p>
-                <p style="font-size:0.75rem;margin-top:4px;color:var(--text-light)">.xlsx, .xls</p>
-                <div class="dz-file" id="import-file-name"></div>
+                <div class="dz-file" id="tb-import-file-name"></div>
             </div>
-            <input type="file" id="import-file-input" accept=".xlsx,.xls" style="display:none" onchange="handleImportFileSelect(event)">
-            <div id="import-result" style="display:none"></div>
-            <div style="margin-top:14px;padding:10px 14px;background:var(--bg-gray);border-radius:var(--radius-sm);font-size:0.8rem;color:var(--text-medium)">
-                <strong>Spalten:</strong> A: Kategorie · B: Schlagwörter · C: Titel · D: Feststellung · E: Maßnahme
+            <input type="file" id="tb-import-file" accept=".xlsx,.xls" style="display:none" onchange="handleImportFileSelect(event,'tb')">
+            <div id="tb-import-result" style="display:none"></div>
+            <div style="margin-top:12px;padding:10px;background:var(--bg-gray);border-radius:var(--radius-sm);font-size:0.8rem;color:var(--text-medium)">
+                <strong>Spalten:</strong> A:Kategorie · B:Schlagwörter · C:Titel · D:Feststellung · E:Maßnahme
             </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-secondary" onclick="closeImportModal()">Abbrechen</button>
-            <button class="btn btn-primary" id="import-btn" onclick="starteImport()" disabled>Importieren</button>
+            <button class="btn btn-secondary" onclick="closeTBImportModal()">Abbrechen</button>
+            <button class="btn btn-primary" id="tb-import-btn" onclick="starteImport('tb')" disabled>Importieren</button>
         </div>
     </div>
 </div>
 
+<!-- Kontakt Modal -->
+<div class="modal-overlay" id="modal-kontakt">
+    <div class="modal">
+        <div class="modal-header"><h3 id="modal-kontakt-title">Neuer Kontakt</h3><button class="btn-icon" onclick="closeKontaktModal()">✕</button></div>
+        <div class="modal-body">
+            <div class="form-grid">
+                <div class="form-group"><label>Firma</label><input type="text" id="kb-firma" placeholder="Muster GmbH"></div>
+                <div class="form-group"><label>Name</label><input type="text" id="kb-name" placeholder="Max Mustermann"></div>
+                <div class="form-group"><label>Funktion</label><input type="text" id="kb-funktion" placeholder="Sicherheitsbeauftragter"></div>
+                <div class="form-group"><label>E-Mail</label><input type="email" id="kb-email" placeholder="max@muster.de"></div>
+                <div class="form-group"><label>Telefon</label><input type="tel" id="kb-telefon" placeholder="+49 123 456789"></div>
+                <div class="form-group"><label>Straße + Nr.</label><input type="text" id="kb-strasse" placeholder="Musterstraße 1"></div>
+                <div class="form-group"><label>PLZ + Ort</label><input type="text" id="kb-ort" placeholder="12345 Musterstadt"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>Notiz</label><textarea id="kb-notiz" rows="2" placeholder="Optionale Notiz..."></textarea></div>
+            </div>
+            <input type="hidden" id="kb-edit-id">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeKontaktModal()">Schließen</button>
+            <button class="btn btn-primary" onclick="saveKontakt()">💾 Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Kontakt Import Modal -->
+<div class="modal-overlay" id="modal-kb-import">
+    <div class="modal modal-md">
+        <div class="modal-header"><h3>📂 Kontakte importieren</h3><button class="btn-icon" onclick="closeKontaktImportModal()">✕</button></div>
+        <div class="modal-body">
+            <div class="import-option selected" id="kb-opt-hinzufuegen" onclick="waehleImportModus('kb','hinzufuegen')"><div class="option-icon">➕</div><div><h4>Hinzufügen</h4><p>Bestehende bleiben, neue kommen dazu.</p></div></div>
+            <div class="import-option" id="kb-opt-ersetzen" onclick="waehleImportModus('kb','ersetzen')"><div class="option-icon">🔄</div><div><h4>Ersetzen</h4><p>Alles löschen und neu importieren.</p></div></div>
+            <div class="drop-zone" id="kb-import-drop-zone" onclick="document.getElementById('kb-import-file').click()" ondragover="handleDragOver(event,'kb-import-drop-zone')" ondragleave="handleDragLeave(event,'kb-import-drop-zone')" ondrop="handleDropImport(event,'kb')">
+                <div class="dz-icon">📊</div><p>Excel-Datei ablegen oder klicken</p>
+                <div class="dz-file" id="kb-import-file-name"></div>
+            </div>
+            <input type="file" id="kb-import-file" accept=".xlsx,.xls" style="display:none" onchange="handleImportFileSelect(event,'kb')">
+            <div id="kb-import-result" style="display:none"></div>
+            <div style="margin-top:12px;padding:10px;background:var(--bg-gray);border-radius:var(--radius-sm);font-size:0.8rem;color:var(--text-medium)">
+                <strong>Spalten:</strong> A:Firma · B:Name · C:Funktion · D:E-Mail · E:Telefon · F:Straße+Nr · G:PLZ+Ort · H:Notiz
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeKontaktImportModal()">Abbrechen</button>
+            <button class="btn btn-primary" id="kb-import-btn" onclick="starteImport('kb')" disabled>Importieren</button>
+        </div>
+    </div>
+</div>
+
+<!-- Kontakt Suche Modal (für Begehung) -->
+<div class="modal-overlay" id="modal-kontakt-suche">
+    <div class="modal modal-md">
+        <div class="modal-header"><h3>📇 Kontakt auswählen</h3><button class="btn-icon" onclick="closeKontaktSuche()">✕</button></div>
+        <div class="modal-body">
+            <div class="form-group" style="margin-bottom:12px">
+                <input type="text" id="ks-input" placeholder="Name, Firma oder Funktion suchen..." oninput="searchKontakte()" style="width:100%">
+            </div>
+            <div id="ks-results" class="tb-search-results" style="display:none"></div>
+            <div id="ks-empty" style="display:none;text-align:center;padding:20px;color:var(--text-light)">Keine Treffer.</div>
+            <div id="ks-hint" style="text-align:center;padding:20px;color:var(--text-light);font-size:0.875rem">Suchbegriff eingeben...</div>
+        </div>
+    </div>
+</div>
+
+<!-- Kamera -->
 <div class="kamera-overlay" id="kamera-overlay">
     <button class="kamera-btn-close" onclick="schliesseKamera()">✕</button>
     <div class="kamera-zoom-indicator" id="kamera-zoom-indicator">1.0×</div>
@@ -452,42 +571,42 @@
 <div id="toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1A202C;color:white;padding:10px 20px;border-radius:8px;font-size:0.875rem;opacity:0;transition:opacity 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;"></div>
 
 <script>
-// ===== PRIORITÄTEN – 5 Stufen, "Sehr Hoch" entfernt, "Hoch" bekommt #B00000 =====
-var PRIORITAETEN = [
-    {wert:'1', label:'Keine Gefährdung',     hex:'#009E60', rgb:[0,158,96],   cssClass:'prio-1'},
-    {wert:'2', label:'Niedrig',              hex:'#FAE502', rgb:[250,229,2],  cssClass:'prio-2'},
-    {wert:'3', label:'Mittel',               hex:'#FF9F00', rgb:[255,159,0],  cssClass:'prio-3'},
-    {wert:'4', label:'Hoch',                hex:'#B00000', rgb:[176,0,0],    cssClass:'prio-4'},
-    {wert:'5', label:'gravierender Mangel',  hex:'#BF00FF', rgb:[191,0,255], cssClass:'prio-5'}
+// ===== PRIORITÄTEN =====
+var PRIORITAETEN=[
+    {wert:'1',label:'Keine Gefährdung',hex:'#009E60',rgb:[0,158,96],cssClass:'prio-1'},
+    {wert:'2',label:'Niedrig',hex:'#FAE502',rgb:[250,229,2],cssClass:'prio-2'},
+    {wert:'3',label:'Mittel',hex:'#FF9F00',rgb:[255,159,0],cssClass:'prio-3'},
+    {wert:'4',label:'Hoch',hex:'#B00000',rgb:[176,0,0],cssClass:'prio-4'},
+    {wert:'5',label:'gravierender Mangel',hex:'#BF00FF',rgb:[191,0,255],cssClass:'prio-5'}
 ];
-
-var ALLGEMEINER_HINWEIS = 'Diese Dokumentation gibt die zum Zeitpunkt der Begehung festgestellten Gegebenheiten, Beobachtungen sowie die vor Ort erteilten Auskünfte wieder. Aufgrund des stichprobenartigen Charakters einer Betriebsbegehung ist eine vollständige Erfassung und Bewertung sämtlicher Aspekte des Arbeits-, Gesundheits- und Brandschutzes nicht möglich. Die Dokumentation erhebt daher keinen Anspruch auf Vollständigkeit. Nicht aufgeführte Sachverhalte sind nicht automatisch als mängelfrei, rechtskonform oder abschließend beurteilt anzusehen.';
-
-function getPrioByWert(w){
-    for(var i=0;i<PRIORITAETEN.length;i++){if(PRIORITAETEN[i].wert===String(w))return PRIORITAETEN[i];}
-    return PRIORITAETEN[3];
-}
+var ALLGEMEINER_HINWEIS='Diese Dokumentation gibt die zum Zeitpunkt der Begehung festgestellten Gegebenheiten, Beobachtungen sowie die vor Ort erteilten Auskünfte wieder. Aufgrund des stichprobenartigen Charakters einer Betriebsbegehung ist eine vollständige Erfassung und Bewertung sämtlicher Aspekte des Arbeits-, Gesundheits- und Brandschutzes nicht möglich. Die Dokumentation erhebt daher keinen Anspruch auf Vollständigkeit. Nicht aufgeführte Sachverhalte sind nicht automatisch als mängelfrei, rechtskonform oder abschließend beurteilt anzusehen.';
+function getPrioByWert(w){for(var i=0;i<PRIORITAETEN.length;i++){if(PRIORITAETEN[i].wert===String(w))return PRIORITAETEN[i];}return PRIORITAETEN[3];}
 
 // ===== STATE =====
 var begehungen=JSON.parse(localStorage.getItem('begehungen')||'[]');
 var textbausteine=JSON.parse(localStorage.getItem('textbausteine')||'[]');
+var kontakte=JSON.parse(localStorage.getItem('kontakte')||'[]');
 var einstellungen=JSON.parse(localStorage.getItem('einstellungen')||'{}');
 var currentBegehungId=null,currentTBSearchMangelIdx=null;
-var formData={maengel:[]};
+var formData={maengel:[],verteiler:[]};
 var mangelCount=0,teilnehmendeCount=0;
 var kameraStream=null,kameraFacingMode='environment',aktuellerMangelIdx=null;
 var pendingFotoDataUrl=null,kameraZoom=1.0,kameraPinchStart=0,kameraPinchZoom=1.0;
 var cropState={imgSrc:null,imgW:0,imgH:0,viewW:0,viewH:0,scale:1,offsetX:0,offsetY:0,isDragging:false,dragStartX:0,dragStartY:0,isHochformat:false,onComplete:null,baseScale:1};
-var importModus='hinzufuegen',importDateiData=null;
+var importModi={tb:'hinzufuegen',kb:'hinzufuegen'};
+var importDaten={tb:null,kb:null};
 
+// ===== INIT =====
 window.onload=function(){
     ladeEinstellungen();
     if(!textbausteine.length)ladeBeispielTextbausteine();
     renderTextbausteine();
+    renderKontakte();
     initKameraGestures();
     document.addEventListener('click',function(){schliesseAlleDropdowns();});
 };
 
+// ===== NAVIGATION =====
 function showView(id){
     schliesseAlleDropdowns();
     document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active');});
@@ -496,12 +615,28 @@ function showView(id){
     if(id==='view-textbausteine')renderTextbausteine();
     window.scrollTo(0,0);
 }
+function showSettingsSub(sub){
+    document.querySelectorAll('.settings-sub').forEach(function(s){s.classList.remove('active');});
+    document.querySelectorAll('.settings-nav-btn').forEach(function(b){b.classList.remove('active');});
+    document.getElementById('ssub-'+sub).classList.add('active');
+    document.getElementById('snav-'+sub).classList.add('active');
+    if(sub==='kontaktbuch')renderKontakte();
+}
 function showToast(msg,ms){ms=ms||2500;var t=document.getElementById('toast');t.textContent=msg;t.style.opacity='1';setTimeout(function(){t.style.opacity='0';},ms);}
 function showConfirm(text,cb){document.getElementById('confirm-text').textContent=text;document.getElementById('modal-confirm').classList.add('active');document.getElementById('confirm-yes-btn').onclick=function(){closeConfirm();cb();};}
 function closeConfirm(){document.getElementById('modal-confirm').classList.remove('active');}
 
-function ladeEinstellungen(){var f=[['s-name','name'],['s-funktion','funktion'],['s-firma','firma'],['s-anschrift','anschrift'],['s-email','email'],['s-telefon','telefon']];f.forEach(function(x){var el=document.getElementById(x[0]);if(el&&einstellungen[x[1]])el.value=einstellungen[x[1]];});if(einstellungen.logo)updateLogoPreview(einstellungen.logo);if(einstellungen.unterschrift)updateUnterschriftPreview(einstellungen.unterschrift);}
-function speichereEinstellungen(){['name','funktion','firma','anschrift','email','telefon'].forEach(function(k){einstellungen[k]=document.getElementById('s-'+k).value;});localStorage.setItem('einstellungen',JSON.stringify(einstellungen));showToast('✅ Einstellungen gespeichert');}
+// ===== EINSTELLUNGEN =====
+function ladeEinstellungen(){
+    var f=[['s-name','name'],['s-funktion','funktion'],['s-firma','firma'],['s-anschrift','anschrift'],['s-email','email'],['s-telefon','telefon']];
+    f.forEach(function(x){var el=document.getElementById(x[0]);if(el&&einstellungen[x[1]])el.value=einstellungen[x[1]];});
+    if(einstellungen.logo)updateLogoPreview(einstellungen.logo);
+    if(einstellungen.unterschrift)updateUnterschriftPreview(einstellungen.unterschrift);
+}
+function speichereEinstellungen(){
+    ['name','funktion','firma','anschrift','email','telefon'].forEach(function(k){einstellungen[k]=document.getElementById('s-'+k).value;});
+    localStorage.setItem('einstellungen',JSON.stringify(einstellungen));showToast('✅ Einstellungen gespeichert');
+}
 function handleLogoUpload(e){var file=e.target.files[0];if(!file)return;var r=new FileReader();r.onload=function(ev){einstellungen.logo=ev.target.result;localStorage.setItem('einstellungen',JSON.stringify(einstellungen));updateLogoPreview(ev.target.result);showToast('✅ Logo gespeichert');};r.readAsDataURL(file);}
 function updateLogoPreview(src){document.getElementById('logo-preview-container').innerHTML='<img src="'+src+'" style="max-width:200px;max-height:80px;object-fit:contain;margin-bottom:8px"><p style="color:var(--text-light);font-size:0.75rem">Klicken zum Ändern</p>';document.getElementById('logo-actions').style.display='flex';}
 function removeLogo(){einstellungen.logo=null;localStorage.setItem('einstellungen',JSON.stringify(einstellungen));document.getElementById('logo-preview-container').innerHTML='<div style="font-size:2rem;margin-bottom:8px">🖼️</div><p style="color:var(--text-light)">Logo hochladen</p>';document.getElementById('logo-actions').style.display='none';showToast('Logo entfernt');}
@@ -509,7 +644,180 @@ function handleUnterschriftUpload(e){var file=e.target.files[0];if(!file)return;
 function updateUnterschriftPreview(src){document.getElementById('unterschrift-preview-container').innerHTML='<img src="'+src+'" style="max-width:200px;max-height:80px;object-fit:contain;margin-bottom:8px"><p style="color:var(--text-light);font-size:0.75rem">Klicken zum Ändern</p>';document.getElementById('unterschrift-actions').style.display='flex';}
 function removeUnterschrift(){einstellungen.unterschrift=null;localStorage.setItem('einstellungen',JSON.stringify(einstellungen));document.getElementById('unterschrift-preview-container').innerHTML='<div style="font-size:2rem;margin-bottom:8px">✍️</div><p style="color:var(--text-light)">Unterschrift hochladen</p>';document.getElementById('unterschrift-actions').style.display='none';showToast('Unterschrift entfernt');}
 
-function ladeBeispielTextbausteine(){textbausteine=[{id:generateId(),kategorie:'Brandschutz',schlagwoerter:['feuerfest','kaffeemaschine'],titel:'Wasserkocher – feuerfeste Unterlage fehlt',feststellung:'Unter dem Wasserkocher ist keine feuerfeste Unterlage vorhanden.',massnahme:'Eine geeignete, nicht brennbare Unterlage ist zu verwenden.'},{id:generateId(),kategorie:'Fluchtweg',schlagwoerter:['fluchtweg','blockiert'],titel:'Fluchtweg blockiert',feststellung:'Fluchtwege sind durch gelagerte Gegenstände blockiert.',massnahme:'Fluchtwege sind dauerhaft freizuhalten.'},{id:generateId(),kategorie:'Elektro',schlagwoerter:['kabel','stolperfalle'],titel:'Kabel – Stolpergefahr',feststellung:'Kabel liegen frei auf dem Boden.',massnahme:'Kabel sind durch Kabelkanäle zu sichern.'}];localStorage.setItem('textbausteine',JSON.stringify(textbausteine));}
+// ===== KONTAKTBUCH =====
+function renderKontakte(){
+    var filter=(document.getElementById('kb-filter')?document.getElementById('kb-filter').value:'').toLowerCase();
+    var tbody=document.getElementById('kb-tbody'),empty=document.getElementById('kb-empty');
+    if(!tbody)return;
+    var g=kontakte.filter(function(k){
+        if(!filter)return true;
+        return (k.firma||'').toLowerCase().indexOf(filter)!==-1||
+               (k.name||'').toLowerCase().indexOf(filter)!==-1||
+               (k.funktion||'').toLowerCase().indexOf(filter)!==-1||
+               (k.email||'').toLowerCase().indexOf(filter)!==-1;
+    });
+    if(!g.length){tbody.innerHTML='';empty.style.display='block';return;}
+    empty.style.display='none';
+    tbody.innerHTML=g.map(function(k){
+        return'<tr>'+
+            '<td>'+escHtml(k.firma||'')+'</td>'+
+            '<td>'+escHtml(k.name||'')+'</td>'+
+            '<td>'+escHtml(k.funktion||'')+'</td>'+
+            '<td>'+escHtml(k.email||'')+'</td>'+
+            '<td>'+escHtml(k.telefon||'')+'</td>'+
+            '<td><div style="display:flex;gap:6px">'+
+            '<button class="btn btn-ghost btn-sm" onclick="editKontakt(\''+k.id+'\')">✏️</button>'+
+            '<button class="btn btn-sm" style="background:var(--danger-light);color:var(--danger);border:1px solid #FEB2B2" onclick="deleteKontakt(\''+k.id+'\')">🗑️</button>'+
+            '</div></td></tr>';
+    }).join('');
+}
+
+function openKontaktModal(id){
+    id=id||null;
+    document.getElementById('modal-kontakt-title').textContent=id?'Kontakt bearbeiten':'Neuer Kontakt';
+    document.getElementById('kb-edit-id').value=id||'';
+    ['kb-firma','kb-name','kb-funktion','kb-email','kb-telefon','kb-strasse','kb-ort','kb-notiz'].forEach(function(i){document.getElementById(i).value='';});
+    if(id){
+        var k=null;for(var i=0;i<kontakte.length;i++){if(kontakte[i].id===id){k=kontakte[i];break;}}
+        if(k){
+            document.getElementById('kb-firma').value=k.firma||'';
+            document.getElementById('kb-name').value=k.name||'';
+            document.getElementById('kb-funktion').value=k.funktion||'';
+            document.getElementById('kb-email').value=k.email||'';
+            document.getElementById('kb-telefon').value=k.telefon||'';
+            document.getElementById('kb-strasse').value=k.strasse||'';
+            document.getElementById('kb-ort').value=k.ort||'';
+            document.getElementById('kb-notiz').value=k.notiz||'';
+        }
+    }
+    document.getElementById('modal-kontakt').classList.add('active');
+}
+function closeKontaktModal(){document.getElementById('modal-kontakt').classList.remove('active');}
+function editKontakt(id){openKontaktModal(id);}
+function saveKontakt(){
+    var id=document.getElementById('kb-edit-id').value;
+    var k={
+        id:id||generateId(),
+        firma:document.getElementById('kb-firma').value.trim(),
+        name:document.getElementById('kb-name').value.trim(),
+        funktion:document.getElementById('kb-funktion').value.trim(),
+        email:document.getElementById('kb-email').value.trim(),
+        telefon:document.getElementById('kb-telefon').value.trim(),
+        strasse:document.getElementById('kb-strasse').value.trim(),
+        ort:document.getElementById('kb-ort').value.trim(),
+        notiz:document.getElementById('kb-notiz').value.trim()
+    };
+    if(id){for(var i=0;i<kontakte.length;i++){if(kontakte[i].id===id){kontakte[i]=k;break;}}}
+    else{kontakte.push(k);}
+    localStorage.setItem('kontakte',JSON.stringify(kontakte));
+    closeKontaktModal();renderKontakte();showToast('✅ Kontakt gespeichert');
+}
+function deleteKontakt(id){
+    showConfirm('Kontakt löschen?',function(){
+        kontakte=kontakte.filter(function(k){return k.id!==id;});
+        localStorage.setItem('kontakte',JSON.stringify(kontakte));
+        renderKontakte();showToast('🗑️ Kontakt gelöscht');
+    });
+}
+
+function downloadKontaktVorlage(){
+    var wb=XLSX.utils.book_new();
+    var ws=XLSX.utils.aoa_to_sheet([
+        ['Firma','Name','Funktion','E-Mail','Telefon','Straße+Nr.','PLZ+Ort','Notiz'],
+        ['Muster GmbH','Max Mustermann','Sicherheitsbeauftragter','max@muster.de','+49 123 456','Musterstr. 1','12345 Stadt','']
+    ]);
+    ws['!cols']=[{wch:20},{wch:20},{wch:20},{wch:25},{wch:15},{wch:20},{wch:15},{wch:20}];
+    XLSX.utils.book_append_sheet(wb,ws,'Kontakte');
+    XLSX.writeFile(wb,'SafeGuard_Kontakte_Vorlage.xlsx');
+    showToast('✅ Vorlage heruntergeladen');
+}
+
+// Kontaktsuche für Begehung
+function openKontaktSuche(){
+    document.getElementById('ks-input').value='';
+    document.getElementById('ks-results').style.display='none';
+    document.getElementById('ks-empty').style.display='none';
+    document.getElementById('ks-hint').style.display='block';
+    document.getElementById('modal-kontakt-suche').classList.add('active');
+    setTimeout(function(){document.getElementById('ks-input').focus();},100);
+}
+function closeKontaktSuche(){document.getElementById('modal-kontakt-suche').classList.remove('active');}
+
+function searchKontakte(){
+    var q=document.getElementById('ks-input').value.toLowerCase().trim();
+    var res=document.getElementById('ks-results'),emp=document.getElementById('ks-empty'),hint=document.getElementById('ks-hint');
+    if(!q){res.style.display='none';emp.style.display='none';hint.style.display='block';return;}
+    hint.style.display='none';
+    var t=kontakte.filter(function(k){
+        return(k.name||'').toLowerCase().indexOf(q)!==-1||
+               (k.firma||'').toLowerCase().indexOf(q)!==-1||
+               (k.funktion||'').toLowerCase().indexOf(q)!==-1||
+               (k.email||'').toLowerCase().indexOf(q)!==-1;
+    });
+    if(!t.length){res.style.display='none';emp.style.display='block';return;}
+    emp.style.display='none';res.style.display='block';
+    res.innerHTML=t.map(function(k){
+        return'<div class="tb-result-item" onclick="waehleKontakt(\''+k.id+'\')">'+
+            '<h4>'+escHtml(k.name||'')+(k.firma?' · '+escHtml(k.firma):'')+'</h4>'+
+            '<p>'+escHtml(k.funktion||'')+' '+(k.email?'· '+escHtml(k.email):'')+'</p>'+
+            '</div>';
+    }).join('');
+}
+
+function waehleKontakt(id){
+    var k=null;for(var i=0;i<kontakte.length;i++){if(kontakte[i].id===id){k=kontakte[i];break;}}
+    if(!k)return;
+    // Teilnehmenden hinzufügen
+    var idx=teilnehmendeCount;
+    addTeilnehmende();
+    // Felder füllen – direkt (kein setTimeout nötig da synchron)
+    var n=document.getElementById('tn-name-'+idx);
+    var f=document.getElementById('tn-funktion-'+idx);
+    var fi=document.getElementById('tn-firma-'+idx);
+    if(n)n.value=k.name||'';
+    if(f)f.value=k.funktion||'';
+    if(fi)fi.value=k.firma||'';
+    // E-Mail automatisch in Verteiler
+    if(k.email){
+        addVerteilerEintrag(k.email);
+    }
+    closeKontaktSuche();
+    showToast('✅ '+escHtml(k.name||'Kontakt')+' hinzugefügt');
+}
+
+// ===== VERTEILER =====
+function addVerteilerEintrag(email){
+    var list=document.getElementById('verteiler-list');
+    var div=document.createElement('div');
+    div.className='verteiler-row';
+    div.innerHTML='<input type="email" placeholder="email@beispiel.de" value="'+escHtml(email||'')+'" oninput="syncVerteiler()">'+
+        '<button class="btn-icon danger" onclick="removeVerteilerEintrag(this)" title="Entfernen">✕</button>';
+    list.appendChild(div);
+    syncVerteiler();
+}
+function removeVerteilerEintrag(btn){btn.parentElement.remove();syncVerteiler();}
+function syncVerteiler(){
+    var rows=document.querySelectorAll('#verteiler-list .verteiler-row input');
+    formData.verteiler=[];
+    rows.forEach(function(r){if(r.value.trim())formData.verteiler.push(r.value.trim());});
+}
+function getVerteiler(){
+    syncVerteiler();return formData.verteiler;
+}
+function ladeVerteiler(liste){
+    document.getElementById('verteiler-list').innerHTML='';
+    (liste||[]).forEach(function(e){addVerteilerEintrag(e);});
+}
+
+// ===== TEXTBAUSTEINE =====
+function ladeBeispielTextbausteine(){
+    textbausteine=[
+        {id:generateId(),kategorie:'Brandschutz',schlagwoerter:['feuerfest','kaffeemaschine'],titel:'Wasserkocher – feuerfeste Unterlage fehlt',feststellung:'Unter dem Wasserkocher ist keine feuerfeste Unterlage vorhanden.',massnahme:'Eine geeignete, nicht brennbare Unterlage ist zu verwenden.'},
+        {id:generateId(),kategorie:'Fluchtweg',schlagwoerter:['fluchtweg','blockiert'],titel:'Fluchtweg blockiert',feststellung:'Fluchtwege sind durch gelagerte Gegenstände blockiert.',massnahme:'Fluchtwege sind dauerhaft freizuhalten.'},
+        {id:generateId(),kategorie:'Elektro',schlagwoerter:['kabel','stolperfalle'],titel:'Kabel – Stolpergefahr',feststellung:'Kabel liegen frei auf dem Boden.',massnahme:'Kabel sind durch Kabelkanäle zu sichern.'}
+    ];
+    localStorage.setItem('textbausteine',JSON.stringify(textbausteine));
+}
 function updateKategorieFilter(){var sel=document.getElementById('tb-filter-kategorie');if(!sel)return;var current=sel.value,kategorien=[];textbausteine.forEach(function(t){if(kategorien.indexOf(t.kategorie)===-1)kategorien.push(t.kategorie);});kategorien.sort();sel.innerHTML='<option value="">Alle Kategorien</option>'+kategorien.map(function(k){return'<option value="'+escHtml(k)+'"'+(k===current?' selected':'')+'>'+escHtml(k)+'</option>';}).join('');}
 function renderTextbausteine(){updateKategorieFilter();var ft=(document.getElementById('tb-filter-text')?document.getElementById('tb-filter-text').value:'').toLowerCase();var fk=document.getElementById('tb-filter-kategorie')?document.getElementById('tb-filter-kategorie').value:'';var tbody=document.getElementById('tb-tbody'),empty=document.getElementById('tb-empty');if(!tbody)return;var g=textbausteine.filter(function(tb){return(!fk||tb.kategorie===fk)&&(!ft||tb.kategorie.toLowerCase().indexOf(ft)!==-1||tb.schlagwoerter.some(function(s){return s.toLowerCase().indexOf(ft)!==-1;})||(tb.titel||'').toLowerCase().indexOf(ft)!==-1||tb.feststellung.toLowerCase().indexOf(ft)!==-1||tb.massnahme.toLowerCase().indexOf(ft)!==-1);});if(!g.length){tbody.innerHTML='';empty.style.display='block';return;}empty.style.display='none';tbody.innerHTML=g.map(function(tb){return'<tr><td><span class="tag">'+escHtml(tb.kategorie)+'</span></td><td>'+tb.schlagwoerter.map(function(s){return'<span class="tag">'+escHtml(s)+'</span>';}).join('')+'</td><td><div class="tb-cell-text" id="ti-'+tb.id+'" onclick="toggleExpand(\'ti-'+tb.id+'\',\'tih-'+tb.id+'\')">'+escHtml(tb.titel||'')+'</div><div class="tb-expand-hint" id="tih-'+tb.id+'" onclick="toggleExpand(\'ti-'+tb.id+'\',\'tih-'+tb.id+'\')">▼ mehr</div></td><td><div class="tb-cell-text" id="f-'+tb.id+'" onclick="toggleExpand(\'f-'+tb.id+'\',\'fh-'+tb.id+'\')">'+escHtml(tb.feststellung)+'</div><div class="tb-expand-hint" id="fh-'+tb.id+'" onclick="toggleExpand(\'f-'+tb.id+'\',\'fh-'+tb.id+'\')">▼ mehr</div></td><td><div class="tb-cell-text" id="m-'+tb.id+'" onclick="toggleExpand(\'m-'+tb.id+'\',\'mh-'+tb.id+'\')">'+escHtml(tb.massnahme)+'</div><div class="tb-expand-hint" id="mh-'+tb.id+'" onclick="toggleExpand(\'m-'+tb.id+'\',\'mh-'+tb.id+'\')">▼ mehr</div></td><td><div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" onclick="editTB(\''+tb.id+'\')">✏️</button><button class="btn btn-sm" style="background:var(--danger-light);color:var(--danger);border:1px solid #FEB2B2" onclick="deleteTB(\''+tb.id+'\')">🗑️</button></div></td></tr>';}).join('');}
 function toggleExpand(cId,hId){var c=document.getElementById(cId),h=document.getElementById(hId);if(!c)return;var e=c.classList.toggle('expanded');if(h)h.textContent=e?'▲ weniger':'▼ mehr';}
@@ -518,133 +826,159 @@ function closeTBModal(){document.getElementById('modal-tb').classList.remove('ac
 function editTB(id){openTBModal(id);}
 function saveTB(){var id=document.getElementById('tb-edit-id').value,kat=document.getElementById('tb-kategorie').value.trim(),sw=document.getElementById('tb-schlagwoerter').value,titel=document.getElementById('tb-titel').value.trim(),fest=document.getElementById('tb-feststellung').value.trim(),mass=document.getElementById('tb-massnahme').value.trim();if(!kat||!fest||!mass){showToast('⚠️ Pflichtfelder ausfüllen');return;}var sws=sw.split(',').map(function(s){return s.trim();}).filter(Boolean);if(id){for(var i=0;i<textbausteine.length;i++){if(textbausteine[i].id===id){textbausteine[i]={id:id,kategorie:kat,schlagwoerter:sws,titel:titel,feststellung:fest,massnahme:mass};break;}}}else{textbausteine.push({id:generateId(),kategorie:kat,schlagwoerter:sws,titel:titel,feststellung:fest,massnahme:mass});}localStorage.setItem('textbausteine',JSON.stringify(textbausteine));closeTBModal();renderTextbausteine();showToast('✅ Textbaustein gespeichert');}
 function deleteTB(id){showConfirm('Textbaustein löschen?',function(){textbausteine=textbausteine.filter(function(t){return t.id!==id;});localStorage.setItem('textbausteine',JSON.stringify(textbausteine));renderTextbausteine();showToast('🗑️ Gelöscht');});}
-function downloadVorlage(){var wb=XLSX.utils.book_new();var ws=XLSX.utils.aoa_to_sheet([['Kategorie','Schlagwörter','Titel der Feststellung','Feststellung','Maßnahme'],['Brandschutz','feuerfest','Wasserkocher – Unterlage fehlt','Unter dem Wasserkocher ist keine feuerfeste Unterlage vorhanden.','Eine geeignete Unterlage ist zu verwenden.']]);ws['!cols']=[{wch:20},{wch:25},{wch:35},{wch:55},{wch:55}];XLSX.utils.book_append_sheet(wb,ws,'Textbausteine');XLSX.writeFile(wb,'SafeGuard_Vorlage.xlsx');showToast('✅ Vorlage heruntergeladen');}
-function openImportModal(){importModus='hinzufuegen';importDateiData=null;document.getElementById('import-file-name').textContent='';document.getElementById('import-result').style.display='none';document.getElementById('import-file-input').value='';document.getElementById('import-btn').disabled=true;document.getElementById('opt-hinzufuegen').classList.add('selected');document.getElementById('opt-ersetzen').classList.remove('selected');document.getElementById('modal-import').classList.add('active');}
-function closeImportModal(){document.getElementById('modal-import').classList.remove('active');importDateiData=null;}
-function waehleImportModus(m){importModus=m;document.getElementById('opt-hinzufuegen').classList.toggle('selected',m==='hinzufuegen');document.getElementById('opt-ersetzen').classList.toggle('selected',m==='ersetzen');}
-function handleDragOver(e){e.preventDefault();document.getElementById('import-drop-zone').classList.add('dragover');}
-function handleDragLeave(e){document.getElementById('import-drop-zone').classList.remove('dragover');}
-function handleDrop(e){e.preventDefault();document.getElementById('import-drop-zone').classList.remove('dragover');var f=e.dataTransfer.files[0];if(f)verarbeiteImportDatei(f);}
-function handleImportFileSelect(e){var f=e.target.files[0];if(f)verarbeiteImportDatei(f);}
-function verarbeiteImportDatei(file){document.getElementById('import-file-name').textContent='📄 '+file.name;var r=new FileReader();r.onload=function(e){try{var wb=XLSX.read(new Uint8Array(e.target.result),{type:'array'});var rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{header:1,defval:''});if(rows.length<2){zeigeImportFehler('Keine Daten.');return;}var d=rows.slice(1).filter(function(r){return r.some(function(c){return String(c).trim()!=='';});});if(!d.length){zeigeImportFehler('Keine Zeilen.');return;}importDateiData=d;var el=document.getElementById('import-result');el.style.display='block';el.className='import-result';el.innerHTML='<div style="font-weight:600;color:var(--primary)">📊 '+d.length+' Zeilen gefunden</div>';document.getElementById('import-btn').disabled=false;}catch(err){zeigeImportFehler('Lesefehler.');importDateiData=null;document.getElementById('import-btn').disabled=true;}};r.readAsArrayBuffer(file);}
-function zeigeImportFehler(msg){var el=document.getElementById('import-result');el.style.display='block';el.className='import-result error';el.innerHTML='<strong>❌</strong> '+escHtml(msg);}
-function starteImport(){if(!importDateiData)return;if(importModus==='ersetzen'){closeImportModal();showConfirm('Alle Textbausteine ersetzen?',function(){fuehreImportAus(importDateiData);});}else{fuehreImportAus(importDateiData);closeImportModal();}}
-function fuehreImportAus(z){if(importModus==='ersetzen')textbausteine=[];var n=0;z.forEach(function(r){var kat=String(r[0]||'').trim(),sw=String(r[1]||'').trim(),titel=String(r[2]||'').trim(),fest=String(r[3]||'').trim(),mass=String(r[4]||'').trim();var sws=sw?sw.split(',').map(function(s){return s.trim();}).filter(Boolean):[];if(kat||fest||mass||sws.length){textbausteine.push({id:generateId(),kategorie:kat,schlagwoerter:sws,titel:titel,feststellung:fest,massnahme:mass});n++;}});localStorage.setItem('textbausteine',JSON.stringify(textbausteine));renderTextbausteine();showToast('✅ '+n+' importiert',3500);importDateiData=null;}
+
+// ===== IMPORT (allgemein) =====
+function waehleImportModus(typ,modus){
+    importModi[typ]=modus;
+    document.getElementById(typ+'-opt-hinzufuegen').classList.toggle('selected',modus==='hinzufuegen');
+    document.getElementById(typ+'-opt-ersetzen').classList.toggle('selected',modus==='ersetzen');
+}
+function downloadTBVorlage(){var wb=XLSX.utils.book_new();var ws=XLSX.utils.aoa_to_sheet([['Kategorie','Schlagwörter','Titel','Feststellung','Maßnahme'],['Brandschutz','feuerfest','Wasserkocher – Unterlage fehlt','Beispiel...','Beispiel...']]);ws['!cols']=[{wch:20},{wch:25},{wch:30},{wch:50},{wch:50}];XLSX.utils.book_append_sheet(wb,ws,'Textbausteine');XLSX.writeFile(wb,'SafeGuard_TB_Vorlage.xlsx');showToast('✅ Vorlage heruntergeladen');}
+function openTBImportModal(){importModi.tb='hinzufuegen';importDaten.tb=null;document.getElementById('tb-import-file-name').textContent='';document.getElementById('tb-import-result').style.display='none';document.getElementById('tb-import-file').value='';document.getElementById('tb-import-btn').disabled=true;document.getElementById('tb-opt-hinzufuegen').classList.add('selected');document.getElementById('tb-opt-ersetzen').classList.remove('selected');document.getElementById('modal-tb-import').classList.add('active');}
+function closeTBImportModal(){document.getElementById('modal-tb-import').classList.remove('active');}
+function openKontaktImportModal(){importModi.kb='hinzufuegen';importDaten.kb=null;document.getElementById('kb-import-file-name').textContent='';document.getElementById('kb-import-result').style.display='none';document.getElementById('kb-import-file').value='';document.getElementById('kb-import-btn').disabled=true;document.getElementById('kb-opt-hinzufuegen').classList.add('selected');document.getElementById('kb-opt-ersetzen').classList.remove('selected');document.getElementById('modal-kb-import').classList.add('active');}
+function closeKontaktImportModal(){document.getElementById('modal-kb-import').classList.remove('active');}
+function handleDragOver(e,id){e.preventDefault();document.getElementById(id).classList.add('dragover');}
+function handleDragLeave(e,id){document.getElementById(id).classList.remove('dragover');}
+function handleDropImport(e,typ){e.preventDefault();document.getElementById(typ+'-import-drop-zone').classList.remove('dragover');var f=e.dataTransfer.files[0];if(f)verarbeiteImportDatei(f,typ);}
+function handleImportFileSelect(e,typ){var f=e.target.files[0];if(f)verarbeiteImportDatei(f,typ);}
+function verarbeiteImportDatei(file,typ){
+    document.getElementById(typ+'-import-file-name').textContent='📄 '+file.name;
+    var r=new FileReader();
+    r.onload=function(e){
+        try{
+            var wb=XLSX.read(new Uint8Array(e.target.result),{type:'array'});
+            var rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{header:1,defval:''});
+            if(rows.length<2){zeigeImportFehler(typ,'Keine Daten.');return;}
+            var d=rows.slice(1).filter(function(r){return r.some(function(c){return String(c).trim()!=='';});});
+            if(!d.length){zeigeImportFehler(typ,'Keine Zeilen.');return;}
+            importDaten[typ]=d;
+            var el=document.getElementById(typ+'-import-result');el.style.display='block';el.className='import-result';
+            el.innerHTML='<div style="font-weight:600;color:var(--primary)">📊 '+d.length+' Zeilen gefunden</div>';
+            document.getElementById(typ+'-import-btn').disabled=false;
+        }catch(err){zeigeImportFehler(typ,'Lesefehler.');importDaten[typ]=null;document.getElementById(typ+'-import-btn').disabled=true;}
+    };
+    r.readAsArrayBuffer(file);
+}
+function zeigeImportFehler(typ,msg){var el=document.getElementById(typ+'-import-result');el.style.display='block';el.className='import-result error';el.innerHTML='<strong>❌</strong> '+escHtml(msg);}
+function starteImport(typ){
+    if(!importDaten[typ])return;
+    if(importModi[typ]==='ersetzen'){
+        if(typ==='tb')closeTBImportModal();else closeKontaktImportModal();
+        showConfirm('Alle bestehenden Einträge ersetzen?',function(){fuehreImportAus(typ,importDaten[typ]);});
+    }else{fuehreImportAus(typ,importDaten[typ]);if(typ==='tb')closeTBImportModal();else closeKontaktImportModal();}
+}
+function fuehreImportAus(typ,z){
+    var n=0;
+    if(typ==='tb'){
+        if(importModi.tb==='ersetzen')textbausteine=[];
+        z.forEach(function(r){
+            var kat=String(r[0]||'').trim(),sw=String(r[1]||'').trim(),titel=String(r[2]||'').trim(),fest=String(r[3]||'').trim(),mass=String(r[4]||'').trim();
+            var sws=sw?sw.split(',').map(function(s){return s.trim();}).filter(Boolean):[];
+            if(kat||fest||mass){textbausteine.push({id:generateId(),kategorie:kat,schlagwoerter:sws,titel:titel,feststellung:fest,massnahme:mass});n++;}
+        });
+        localStorage.setItem('textbausteine',JSON.stringify(textbausteine));renderTextbausteine();
+    }else{
+        if(importModi.kb==='ersetzen')kontakte=[];
+        z.forEach(function(r){
+            var k={
+                id:generateId(),
+                firma:String(r[0]||'').trim(),name:String(r[1]||'').trim(),
+                funktion:String(r[2]||'').trim(),email:String(r[3]||'').trim(),
+                telefon:String(r[4]||'').trim(),strasse:String(r[5]||'').trim(),
+                ort:String(r[6]||'').trim(),notiz:String(r[7]||'').trim()
+            };
+            if(k.firma||k.name||k.email){kontakte.push(k);n++;}
+        });
+        localStorage.setItem('kontakte',JSON.stringify(kontakte));renderKontakte();
+    }
+    showToast('✅ '+n+' importiert',3500);importDaten[typ]=null;
+}
+
+// ===== TB SUCHE =====
 function openTBSearch(idx){currentTBSearchMangelIdx=idx;document.getElementById('tb-search-input').value='';document.getElementById('tb-search-results').style.display='none';document.getElementById('tb-search-empty').style.display='none';document.getElementById('modal-tb-search').classList.add('active');setTimeout(function(){document.getElementById('tb-search-input').focus();},100);}
 function closeTBSearch(){document.getElementById('modal-tb-search').classList.remove('active');currentTBSearchMangelIdx=null;}
 function searchTextbausteine(){var q=document.getElementById('tb-search-input').value.toLowerCase().trim();var res=document.getElementById('tb-search-results'),emp=document.getElementById('tb-search-empty');if(!q){res.style.display='none';emp.style.display='none';return;}var t=textbausteine.filter(function(tb){return tb.schlagwoerter.some(function(s){return s.toLowerCase().indexOf(q)!==-1;})||tb.kategorie.toLowerCase().indexOf(q)!==-1||(tb.titel||'').toLowerCase().indexOf(q)!==-1||tb.feststellung.toLowerCase().indexOf(q)!==-1;});if(!t.length){res.style.display='none';emp.style.display='block';return;}emp.style.display='none';res.style.display='block';res.innerHTML=t.map(function(tb){return'<div class="tb-result-item" onclick="applyTextbaustein(\''+tb.id+'\')"><h4>'+escHtml(tb.kategorie)+' · '+escHtml(tb.titel||tb.feststellung.substring(0,40))+'</h4><p>'+escHtml(tb.feststellung.substring(0,100))+'...</p></div>';}).join('');}
-function applyTextbaustein(tbId){var tb=null;for(var i=0;i<textbausteine.length;i++){if(textbausteine[i].id===tbId){tb=textbausteine[i];break;}}var idx=currentTBSearchMangelIdx;if(!tb||idx===null)return;var ti=document.getElementById('mangel-titel-'+idx),f=document.getElementById('mangel-feststellung-'+idx),m=document.getElementById('mangel-massnahme-'+idx);if(ti&&tb.titel)ti.value=tb.titel;if(f)f.value=tb.feststellung;if(m)m.value=tb.massnahme;if(!formData.maengel[idx])formData.maengel[idx]={};formData.maengel[idx].titel=tb.titel||'';formData.maengel[idx].feststellung=tb.feststellung;formData.maengel[idx].massnahme=tb.massnahme;closeTBSearch();showToast('✅ Textbaustein eingefügt');}
 
+function applyTextbaustein(tbId){
+    var tb=null;for(var i=0;i<textbausteine.length;i++){if(textbausteine[i].id===tbId){tb=textbausteine[i];break;}}
+    var idx=currentTBSearchMangelIdx;if(!tb||idx===null)return;
+
+    // Titel, Feststellung, Maßnahme setzen – direkt ohne setTimeout (Fix für Handy)
+    var tiEl=document.getElementById('mangel-titel-'+idx);
+    var fEl=document.getElementById('mangel-feststellung-'+idx);
+    var mEl=document.getElementById('mangel-massnahme-'+idx);
+
+    if(tiEl){tiEl.value=tb.titel||'';}
+    if(fEl){fEl.value=tb.feststellung||'';}
+    if(mEl){mEl.value=tb.massnahme||'';}
+
+    // formData aktualisieren
+    if(!formData.maengel[idx])formData.maengel[idx]={};
+    formData.maengel[idx].titel=tb.titel||'';
+    formData.maengel[idx].feststellung=tb.feststellung||'';
+    formData.maengel[idx].massnahme=tb.massnahme||'';
+
+    closeTBSearch();showToast('✅ Textbaustein eingefügt');
+}
+
+// ===== BEGEHUNGSLISTE =====
 function renderBegehungsListe(){var c=document.getElementById('begehungen-list-container');if(!begehungen.length){c.innerHTML='<div class="empty-state"><div class="icon">📋</div><p style="font-weight:600;margin-bottom:8px">Noch keine Begehungen</p><p style="font-size:0.85rem">Klicken Sie auf "+ Neue Begehung"</p></div>';return;}c.innerHTML='<div class="begehung-list">'+begehungen.map(function(b){return'<div class="begehung-item"><div class="begehung-item-info"><h3>'+escHtml(b.unternehmen||'Unbekannt')+'</h3><p>📅 '+formatDate(b.datum)+' · 📍 '+escHtml([b.strasse,b.ort].filter(Boolean).join(', '))+' · '+(b.maengel||[]).filter(Boolean).length+' Einträge</p></div><div class="begehung-item-actions"><button class="btn btn-ghost btn-sm" onclick="editBegehung(\''+b.id+'\')">✏️ Bearbeiten</button><button class="btn btn-primary btn-sm" onclick="exportBegehungPDF(\''+b.id+'\')">📄 PDF</button><button class="btn btn-sm" style="background:var(--danger-light);color:var(--danger);border:1px solid #FEB2B2" onclick="deleteBegehung(\''+b.id+'\')">🗑️</button></div></div>';}).join('')+'</div>';}
 
-function neueBegehung(){currentBegehungId=null;formData={maengel:[]};mangelCount=0;teilnehmendeCount=0;document.getElementById('form-title').textContent='Neue Begehung';['f-unternehmen','f-strasse','f-ort'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('f-datum').value=new Date().toISOString().split('T')[0];document.getElementById('teilnehmende-list').innerHTML='';document.getElementById('maengel-container').innerHTML='';addTeilnehmende();addMangel();showView('view-begehung-form');}
-function editBegehung(id){var b=null;for(var i=0;i<begehungen.length;i++){if(begehungen[i].id===id){b=begehungen[i];break;}}if(!b)return;currentBegehungId=id;formData=JSON.parse(JSON.stringify(b));mangelCount=0;teilnehmendeCount=0;document.getElementById('form-title').textContent='Begehung bearbeiten';document.getElementById('f-unternehmen').value=b.unternehmen||'';document.getElementById('f-strasse').value=b.strasse||'';document.getElementById('f-ort').value=b.ort||'';document.getElementById('f-datum').value=b.datum||'';document.getElementById('teilnehmende-list').innerHTML='';document.getElementById('maengel-container').innerHTML='';(b.teilnehmende||b.teilnehmer||[]).forEach(function(t){var i=teilnehmendeCount;addTeilnehmende();(function(idx,teil){setTimeout(function(){var n=document.getElementById('tn-name-'+idx),f=document.getElementById('tn-funktion-'+idx),fi=document.getElementById('tn-firma-'+idx);if(n)n.value=teil.name||'';if(f)f.value=teil.funktion||'';if(fi)fi.value=teil.firma||'';},0);})(i,t);});formData.maengel=b.maengel||[];b.maengel.forEach(function(m,i){if(m!==null)addMangelBlock(i,m);});mangelCount=b.maengel.length;showView('view-begehung-form');}
+// ===== BEGEHUNG FORMULAR =====
+function neueBegehung(){
+    currentBegehungId=null;formData={maengel:[],verteiler:[]};mangelCount=0;teilnehmendeCount=0;
+    document.getElementById('form-title').textContent='Neue Begehung';
+    ['f-unternehmen','f-strasse','f-ort'].forEach(function(id){document.getElementById(id).value='';});
+    document.getElementById('f-datum').value=new Date().toISOString().split('T')[0];
+    document.getElementById('teilnehmende-list').innerHTML='';
+    document.getElementById('maengel-container').innerHTML='';
+    document.getElementById('verteiler-list').innerHTML='';
+    addTeilnehmende();addMangel();showView('view-begehung-form');
+}
+function editBegehung(id){
+    var b=null;for(var i=0;i<begehungen.length;i++){if(begehungen[i].id===id){b=begehungen[i];break;}}if(!b)return;
+    currentBegehungId=id;formData=JSON.parse(JSON.stringify(b));if(!formData.verteiler)formData.verteiler=[];
+    mangelCount=0;teilnehmendeCount=0;
+    document.getElementById('form-title').textContent='Begehung bearbeiten';
+    document.getElementById('f-unternehmen').value=b.unternehmen||'';document.getElementById('f-strasse').value=b.strasse||'';document.getElementById('f-ort').value=b.ort||'';document.getElementById('f-datum').value=b.datum||'';
+    document.getElementById('teilnehmende-list').innerHTML='';document.getElementById('maengel-container').innerHTML='';
+    (b.teilnehmende||b.teilnehmer||[]).forEach(function(t){var i=teilnehmendeCount;addTeilnehmende();(function(idx,teil){setTimeout(function(){var n=document.getElementById('tn-name-'+idx),f=document.getElementById('tn-funktion-'+idx),fi=document.getElementById('tn-firma-'+idx);if(n)n.value=teil.name||'';if(f)f.value=teil.funktion||'';if(fi)fi.value=teil.firma||'';},0);})(i,t);});
+    formData.maengel=b.maengel||[];b.maengel.forEach(function(m,i){if(m!==null)addMangelBlock(i,m);});mangelCount=b.maengel.length;
+    ladeVerteiler(b.verteiler||[]);
+    showView('view-begehung-form');
+}
 
+// ===== TEILNEHMENDE =====
 function addTeilnehmende(){var list=document.getElementById('teilnehmende-list');var i=teilnehmendeCount++;var div=document.createElement('div');div.className='teilnehmende-row';div.id='teilnehmende-row-'+i;div.innerHTML='<div class="teilnehmende-nr">Person '+(i+1)+'</div><div class="form-group"><input type="text" id="tn-name-'+i+'" placeholder="Name"></div><div class="form-group"><input type="text" id="tn-funktion-'+i+'" placeholder="Funktion"></div><div class="form-group"><input type="text" id="tn-firma-'+i+'" placeholder="Firma"></div><button class="btn-icon danger" onclick="removeTeilnehmende('+i+')" title="Entfernen">✕</button>';list.appendChild(div);}
 function removeTeilnehmende(i){var el=document.getElementById('teilnehmende-row-'+i);if(el)el.remove();aktualisierePersonNummern();}
 function aktualisierePersonNummern(){document.querySelectorAll('.teilnehmende-row').forEach(function(row,i){var nr=row.querySelector('.teilnehmende-nr');if(nr)nr.textContent='Person '+(i+1);});}
 function getTeilnehmende(){var result=[];for(var i=0;i<teilnehmendeCount;i++){if(!document.getElementById('teilnehmende-row-'+i))continue;var n=document.getElementById('tn-name-'+i)?document.getElementById('tn-name-'+i).value:'';var f=document.getElementById('tn-funktion-'+i)?document.getElementById('tn-funktion-'+i).value:'';var fi=document.getElementById('tn-firma-'+i)?document.getElementById('tn-firma-'+i).value:'';if(n||f||fi)result.push({name:n,funktion:f,firma:fi});}return result;}
 
 // ===== CUSTOM DROPDOWN =====
-// Schlüssel: position:absolute am .prio-dropdown-list (KEIN fixed)
-// Das mangel-block hat overflow:visible, damit kein Clipping
-
-function schliesseAlleDropdowns(){
-    document.querySelectorAll('.prio-dropdown-list.open').forEach(function(l){l.classList.remove('open');});
+function schliesseAlleDropdowns(){document.querySelectorAll('.prio-dropdown-list.open').forEach(function(l){l.classList.remove('open');});}
+function buildPrioDropdown(idx,selectedWert){
+    selectedWert=String(selectedWert||'4');var prio=getPrioByWert(selectedWert);
+    var optionsHTML=PRIORITAETEN.map(function(p){return'<div class="prio-dropdown-option'+(p.wert===selectedWert?' selected':'')+'" data-wert="'+p.wert+'" onclick="waehleDropdownPrio('+idx+',\''+p.wert+'\',event)"><span class="prio-circle" style="background:'+p.hex+'"></span><span>'+escHtml(p.label)+'</span></div>';}).join('');
+    return'<div class="prio-dropdown" id="prio-dropdown-'+idx+'" onclick="event.stopPropagation()"><div class="prio-dropdown-trigger prio-trigger-'+selectedWert+'" id="prio-trigger-'+idx+'" onclick="toggleDropdown('+idx+',event)"><span class="prio-circle" id="prio-circle-'+idx+'" style="background:'+prio.hex+'"></span><span id="prio-label-'+idx+'">'+escHtml(prio.label)+'</span></div><div class="prio-dropdown-list" id="prio-list-'+idx+'">'+optionsHTML+'</div></div>';
 }
-
-function buildPrioDropdown(idx, selectedWert){
-    selectedWert = String(selectedWert||'4');
-    var prio = getPrioByWert(selectedWert);
-    var optionsHTML = PRIORITAETEN.map(function(p){
-        return '<div class="prio-dropdown-option'+(p.wert===selectedWert?' selected':'')+'" '+
-               'data-wert="'+p.wert+'" '+
-               'onclick="waehleDropdownPrio('+idx+',\''+p.wert+'\',event)">'+
-               '<span class="prio-circle" style="background:'+p.hex+'"></span>'+
-               '<span>'+escHtml(p.label)+'</span>'+
-               '</div>';
-    }).join('');
-    return '<div class="prio-dropdown" id="prio-dropdown-'+idx+'" onclick="event.stopPropagation()">'+
-        '<div class="prio-dropdown-trigger prio-trigger-'+selectedWert+'" id="prio-trigger-'+idx+'" '+
-        'onclick="toggleDropdown('+idx+',event)">'+
-        '<span class="prio-circle" id="prio-circle-'+idx+'" style="background:'+prio.hex+'"></span>'+
-        '<span id="prio-label-'+idx+'">'+escHtml(prio.label)+'</span>'+
-        '</div>'+
-        '<div class="prio-dropdown-list" id="prio-list-'+idx+'">'+optionsHTML+'</div>'+
-        '</div>';
-}
-
-function toggleDropdown(idx, event){
-    event.stopPropagation();
-    var list = document.getElementById('prio-list-'+idx);
-    var isOpen = list.classList.contains('open');
-    schliesseAlleDropdowns();
-    if(!isOpen) list.classList.add('open');
-}
-
-function waehleDropdownPrio(idx, wert, event){
-    event.stopPropagation();
-    var prio    = getPrioByWert(wert);
-    var trigger = document.getElementById('prio-trigger-'+idx);
-    var circle  = document.getElementById('prio-circle-'+idx);
-    var label   = document.getElementById('prio-label-'+idx);
-    if(trigger) trigger.className = 'prio-dropdown-trigger prio-trigger-'+wert;
-    if(circle)  circle.style.background = prio.hex;
-    if(label)   label.textContent = prio.label;
-    var list = document.getElementById('prio-list-'+idx);
-    if(list){
-        list.querySelectorAll('.prio-dropdown-option').forEach(function(opt){
-            opt.classList.toggle('selected', opt.dataset.wert===wert);
-        });
-        list.classList.remove('open');
-    }
-    if(!formData.maengel[idx]) formData.maengel[idx]={};
-    formData.maengel[idx].prioritaet = wert;
-}
+function toggleDropdown(idx,event){event.stopPropagation();var list=document.getElementById('prio-list-'+idx);var isOpen=list.classList.contains('open');schliesseAlleDropdowns();if(!isOpen)list.classList.add('open');}
+function waehleDropdownPrio(idx,wert,event){event.stopPropagation();var prio=getPrioByWert(wert);var trigger=document.getElementById('prio-trigger-'+idx),circle=document.getElementById('prio-circle-'+idx),label=document.getElementById('prio-label-'+idx);if(trigger)trigger.className='prio-dropdown-trigger prio-trigger-'+wert;if(circle)circle.style.background=prio.hex;if(label)label.textContent=prio.label;var list=document.getElementById('prio-list-'+idx);if(list){list.querySelectorAll('.prio-dropdown-option').forEach(function(opt){opt.classList.toggle('selected',opt.dataset.wert===wert);});list.classList.remove('open');}if(!formData.maengel[idx])formData.maengel[idx]={};formData.maengel[idx].prioritaet=wert;}
 
 // ===== MÄNGEL =====
 function addMangel(){var idx=mangelCount;if(!formData.maengel[idx])formData.maengel[idx]={titel:'',feststellung:'',massnahme:'',prioritaet:'4',fotos:[]};addMangelBlock(idx,formData.maengel[idx]);mangelCount++;aktualisiereMangelNummern();}
-
 function addMangelBlock(idx,data){
-    data=data||{};
-    var container=document.getElementById('maengel-container');
-    var block=document.createElement('div');
-    block.className='mangel-block';block.id='mangel-block-'+idx;block.dataset.idx=idx;
-    var prioWert=String(data.prioritaet||'4');
-    block.innerHTML=
-        '<div class="mangel-header">'+
-        '<span class="mangel-nr" id="mangel-nr-'+idx+'">'+(idx+1)+'.</span>'+
-        '<input class="mangel-titel-input" type="text" id="mangel-titel-'+idx+'" placeholder="Titel der Feststellung..." value="'+escHtml(data.titel||'')+'" oninput="updateMangelTitel('+idx+')">'+
-        '<button class="btn-icon danger" onclick="removeMangel('+idx+')" style="width:28px;height:28px;border-radius:50%;font-size:0.8rem;flex-shrink:0">✕</button>'+
-        '</div>'+
-        '<div class="mangel-body">'+
-        '<div class="mangel-row">'+
-        '<div class="form-group"><label>Feststellung</label><textarea id="mangel-feststellung-'+idx+'" rows="4" placeholder="Feststellung beschreiben..." oninput="updateMangelData('+idx+')">'+escHtml(data.feststellung||'')+'</textarea></div>'+
-        '<div class="form-group"><label>Maßnahme</label><textarea id="mangel-massnahme-'+idx+'" rows="4" placeholder="Maßnahme beschreiben..." oninput="updateMangelData('+idx+')">'+escHtml(data.massnahme||'')+'</textarea></div>'+
-        '</div>'+
-        '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'+
-        '<div class="form-group" style="flex:0"><label>Priorität</label>'+
-        buildPrioDropdown(idx,prioWert)+
-        '</div>'+
-        '<div style="margin-top:16px"><button class="btn btn-ghost btn-sm" onclick="openTBSearch('+idx+')">🔍 Textbaustein</button></div>'+
-        '</div>'+
-        '<div><div class="foto-section-label">Fotos</div>'+
-        '<div class="foto-buttons">'+
-        '<button class="foto-btn" onclick="triggerGalerieUpload('+idx+')">🖼️ Aus Galerie</button>'+
-        '<button class="foto-btn kamera" onclick="oeffneKamera('+idx+')">📷 Kamera</button>'+
-        '</div>'+
-        '<div class="foto-preview" id="foto-preview-'+idx+'"></div>'+
-        '<input type="file" id="foto-input-'+idx+'" accept="image/*" multiple style="display:none" onchange="handleGalerieUpload(event,'+idx+')">'+
-        '</div></div>';
+    data=data||{};var container=document.getElementById('maengel-container');var block=document.createElement('div');block.className='mangel-block';block.id='mangel-block-'+idx;block.dataset.idx=idx;var prioWert=String(data.prioritaet||'4');
+    block.innerHTML='<div class="mangel-header"><span class="mangel-nr" id="mangel-nr-'+idx+'">'+(idx+1)+'.</span><input class="mangel-titel-input" type="text" id="mangel-titel-'+idx+'" placeholder="Titel der Feststellung..." value="'+escHtml(data.titel||'')+'" oninput="updateMangelTitel('+idx+')"><button class="btn-icon danger" onclick="removeMangel('+idx+')" style="width:28px;height:28px;border-radius:50%;font-size:0.8rem;flex-shrink:0">✕</button></div><div class="mangel-body"><div class="mangel-row"><div class="form-group"><label>Feststellung</label><textarea id="mangel-feststellung-'+idx+'" rows="4" placeholder="Feststellung beschreiben..." oninput="updateMangelData('+idx+')">'+escHtml(data.feststellung||'')+'</textarea></div><div class="form-group"><label>Maßnahme</label><textarea id="mangel-massnahme-'+idx+'" rows="4" placeholder="Maßnahme beschreiben..." oninput="updateMangelData('+idx+')">'+escHtml(data.massnahme||'')+'</textarea></div></div><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div class="form-group" style="flex:0"><label>Priorität</label>'+buildPrioDropdown(idx,prioWert)+'</div><div style="margin-top:16px"><button class="btn btn-ghost btn-sm" onclick="openTBSearch('+idx+')">🔍 Textbaustein</button></div></div><div><div class="foto-section-label">Fotos</div><div class="foto-buttons"><button class="foto-btn" onclick="triggerGalerieUpload('+idx+')">🖼️ Aus Galerie</button><button class="foto-btn kamera" onclick="oeffneKamera('+idx+')">📷 Kamera</button></div><div class="foto-preview" id="foto-preview-'+idx+'"></div><input type="file" id="foto-input-'+idx+'" accept="image/*" multiple style="display:none" onchange="handleGalerieUpload(event,'+idx+')"></div></div>';
     container.appendChild(block);
     if(data.fotos&&data.fotos.length){data.fotos.forEach(function(f){addFotoPreview(idx,f.dataUrl||f,f.hochformat||false);});}
 }
-
 function removeMangel(idx){var el=document.getElementById('mangel-block-'+idx);if(el)el.remove();if(formData.maengel[idx]!==undefined)formData.maengel[idx]=null;aktualisiereMangelNummern();}
 function aktualisiereMangelNummern(){document.querySelectorAll('.mangel-block').forEach(function(block,i){var nr=document.getElementById('mangel-nr-'+block.dataset.idx);if(nr)nr.textContent=(i+1)+'.';});}
 function updateMangelTitel(idx){if(!formData.maengel[idx])formData.maengel[idx]={};var t=document.getElementById('mangel-titel-'+idx);if(t)formData.maengel[idx].titel=t.value;}
 function updateMangelData(idx){if(!formData.maengel[idx])formData.maengel[idx]={};var f=document.getElementById('mangel-feststellung-'+idx),m=document.getElementById('mangel-massnahme-'+idx);if(f)formData.maengel[idx].feststellung=f.value;if(m)formData.maengel[idx].massnahme=m.value;}
 
+// ===== FOTOS =====
 function istHochformat(dataUrl,callback){var img=new Image();img.onload=function(){callback(img.height>img.width,img.width,img.height);};img.src=dataUrl;}
 function triggerGalerieUpload(idx){document.getElementById('foto-input-'+idx).click();}
 function handleGalerieUpload(event,idx){Array.from(event.target.files).forEach(function(file){var r=new FileReader();r.onload=function(e){var src=e.target.result;oeffneCrop(src,function(croppedSrc){istHochformat(croppedSrc,function(isHoch){if(!formData.maengel[idx])formData.maengel[idx]={fotos:[]};if(!formData.maengel[idx].fotos)formData.maengel[idx].fotos=[];formData.maengel[idx].fotos.push({dataUrl:croppedSrc,hochformat:isHoch});addFotoPreview(idx,croppedSrc,isHoch);});});};r.readAsDataURL(file);});event.target.value='';}
@@ -653,6 +987,7 @@ function editFoto(idx,btn){var item=btn.parentElement,src=item.dataset.src;oeffn
 function removeFoto(idx,btn){var item=btn.parentElement,src=item.dataset.src;if(formData.maengel[idx]&&formData.maengel[idx].fotos){formData.maengel[idx].fotos=formData.maengel[idx].fotos.filter(function(f){var url=(typeof f==='object')?f.dataUrl:f;return url!==src;});}item.remove();}
 function zoomFoto(src){var o=document.createElement('div');o.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:16px';o.innerHTML='<img src="'+src+'" style="max-width:90vw;max-height:90vh;border-radius:8px;object-fit:contain">';o.onclick=function(){o.remove();};document.body.appendChild(o);}
 
+// ===== KAMERA =====
 function initKameraGestures(){var overlay=document.getElementById('kamera-overlay');overlay.addEventListener('touchstart',function(e){if(e.touches.length===2){kameraPinchStart=getPinchDist(e);kameraPinchZoom=kameraZoom;e.preventDefault();}},{passive:false});overlay.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var newZoom=Math.min(Math.max(kameraPinchZoom*(getPinchDist(e)/kameraPinchStart),1.0),5.0);setKameraZoom(newZoom);}},{passive:false});overlay.addEventListener('touchend',function(e){if(e.touches.length<2)kameraPinchStart=0;});}
 function getPinchDist(e){var dx=e.touches[0].clientX-e.touches[1].clientX,dy=e.touches[0].clientY-e.touches[1].clientY;return Math.sqrt(dx*dx+dy*dy);}
 function setKameraZoom(zoom){kameraZoom=zoom;document.getElementById('kamera-video').style.transform='scale('+zoom+')';var ind=document.getElementById('kamera-zoom-indicator');ind.textContent=zoom.toFixed(1)+'×';ind.classList.add('visible');clearTimeout(window._zoomHideTimer);window._zoomHideTimer=setTimeout(function(){ind.classList.remove('visible');},1500);if(kameraStream){var track=kameraStream.getVideoTracks()[0];if(track&&track.getCapabilities){var caps=track.getCapabilities();if(caps.zoom){var zv=Math.min(Math.max(zoom,caps.zoom.min),caps.zoom.max);track.applyConstraints({advanced:[{zoom:zv}]}).catch(function(){});}}}}
@@ -664,6 +999,7 @@ function fotoBestaetigenOhneCrop(){if(pendingFotoDataUrl&&aktuellerMangelIdx!==n
 function fotoBestaetigenMitCrop(){var src=pendingFotoDataUrl,idx=aktuellerMangelIdx;document.getElementById('foto-confirm-overlay').classList.remove('active');oeffneCrop(src,function(croppedSrc){istHochformat(croppedSrc,function(isHoch){if(!formData.maengel[idx])formData.maengel[idx]={fotos:[]};if(!formData.maengel[idx].fotos)formData.maengel[idx].fotos=[];formData.maengel[idx].fotos.push({dataUrl:croppedSrc,hochformat:isHoch});addFotoPreview(idx,croppedSrc,isHoch);showToast('✅ Foto hinzugefügt');});});pendingFotoDataUrl=null;document.getElementById('kamera-video').play();}
 function schliesseKamera(){document.getElementById('kamera-overlay').classList.remove('active');document.getElementById('foto-confirm-overlay').classList.remove('active');if(kameraStream){kameraStream.getTracks().forEach(function(t){t.stop();});kameraStream=null;}pendingFotoDataUrl=null;kameraZoom=1.0;}
 
+// ===== CROP =====
 function oeffneCrop(src,onComplete){cropState.imgSrc=src;cropState.onComplete=onComplete;var img=new Image();img.onload=function(){cropState.imgW=img.naturalWidth;cropState.imgH=img.naturalHeight;cropState.isHochformat=img.naturalHeight>img.naturalWidth;var ratio=cropState.isHochformat?(3/4):(4/3);document.getElementById('crop-format-hint').textContent=cropState.isHochformat?'Hochformat erkannt · 3:4':'Querformat erkannt · 4:3';var container=document.getElementById('crop-container');var cW=container.clientWidth||window.innerWidth,cH=container.clientHeight||(window.innerHeight-140);var maxW=Math.min(cW*0.85,480),maxH=Math.min(cH*0.80,480);var vpW,vpH;if(maxW/ratio<=maxH){vpW=maxW;vpH=vpW/ratio;}else{vpH=maxH;vpW=vpH*ratio;}cropState.viewW=vpW;cropState.viewH=vpH;var vp=document.getElementById('crop-viewport');vp.style.width=vpW+'px';vp.style.height=vpH+'px';var scaleToFit=Math.max(vpW/img.naturalWidth,vpH/img.naturalHeight);cropState.scale=scaleToFit;cropState.baseScale=scaleToFit;cropState.offsetX=(vpW-img.naturalWidth*scaleToFit)/2;cropState.offsetY=(vpH-img.naturalHeight*scaleToFit)/2;var cropImg=document.getElementById('crop-img');cropImg.src=src;cropImg.style.width=img.naturalWidth*scaleToFit+'px';cropImg.style.height=img.naturalHeight*scaleToFit+'px';cropImg.style.left=cropState.offsetX+'px';cropImg.style.top=cropState.offsetY+'px';document.getElementById('crop-canvas-bg').src=src;document.getElementById('crop-zoom-slider').value=100;document.getElementById('crop-zoom-label').textContent='1.0×';document.getElementById('crop-overlay').classList.add('active');initCropDrag();};img.src=src;}
 function setCropZoom(val){var factor=val/100,newScale=cropState.baseScale*factor;var minScale=Math.max(cropState.viewW/cropState.imgW,cropState.viewH/cropState.imgH);if(newScale<minScale){newScale=minScale;factor=newScale/cropState.baseScale;}cropState.scale=newScale;var cropImg=document.getElementById('crop-img');cropImg.style.width=cropState.imgW*newScale+'px';cropImg.style.height=cropState.imgH*newScale+'px';clampCropOffset();cropImg.style.left=cropState.offsetX+'px';cropImg.style.top=cropState.offsetY+'px';document.getElementById('crop-zoom-label').textContent=factor.toFixed(1)+'×';}
 function clampCropOffset(){var imgW=cropState.imgW*cropState.scale,imgH=cropState.imgH*cropState.scale;if(cropState.offsetX>0)cropState.offsetX=0;if(cropState.offsetX<cropState.viewW-imgW)cropState.offsetX=cropState.viewW-imgW;if(cropState.offsetY>0)cropState.offsetY=0;if(cropState.offsetY<cropState.viewH-imgH)cropState.offsetY=cropState.viewH-imgH;}
@@ -671,10 +1007,34 @@ function initCropDrag(){var cropImg=document.getElementById('crop-img'),vp=docum
 function schliesseCrop(){document.getElementById('crop-overlay').classList.remove('active');cropState.onComplete=null;}
 function cropBestaetigen(){var canvas=document.createElement('canvas');var outW=cropState.isHochformat?900:1200,outH=cropState.isHochformat?1200:900;canvas.width=outW;canvas.height=outH;var img=new Image();img.onload=function(){var srcX=(-cropState.offsetX)/cropState.scale,srcY=(-cropState.offsetY)/cropState.scale;var srcW=cropState.viewW/cropState.scale,srcH=cropState.viewH/cropState.scale;canvas.getContext('2d').drawImage(img,srcX,srcY,srcW,srcH,0,0,outW,outH);var result=canvas.toDataURL('image/jpeg',0.92);document.getElementById('crop-overlay').classList.remove('active');if(cropState.onComplete)cropState.onComplete(result);};img.src=cropState.imgSrc;}
 
-function sammleBegehungsDaten(){for(var i=0;i<mangelCount;i++){if(formData.maengel[i]===null)continue;if(!formData.maengel[i])formData.maengel[i]={};var ti=document.getElementById('mangel-titel-'+i),f=document.getElementById('mangel-feststellung-'+i),m=document.getElementById('mangel-massnahme-'+i);if(ti)formData.maengel[i].titel=ti.value;if(f)formData.maengel[i].feststellung=f.value;if(m)formData.maengel[i].massnahme=m.value;if(!formData.maengel[i].prioritaet)formData.maengel[i].prioritaet='4';}return{id:currentBegehungId||generateId(),unternehmen:document.getElementById('f-unternehmen').value,strasse:document.getElementById('f-strasse').value,ort:document.getElementById('f-ort').value,datum:document.getElementById('f-datum').value,teilnehmende:getTeilnehmende(),maengel:formData.maengel.filter(function(m){return m!==null;}),erstelltAm:new Date().toISOString()};}
+// ===== DATEN SAMMELN =====
+function sammleBegehungsDaten(){
+    for(var i=0;i<mangelCount;i++){
+        if(formData.maengel[i]===null)continue;
+        if(!formData.maengel[i])formData.maengel[i]={};
+        var ti=document.getElementById('mangel-titel-'+i),f=document.getElementById('mangel-feststellung-'+i),m=document.getElementById('mangel-massnahme-'+i);
+        if(ti)formData.maengel[i].titel=ti.value;
+        if(f)formData.maengel[i].feststellung=f.value;
+        if(m)formData.maengel[i].massnahme=m.value;
+        if(!formData.maengel[i].prioritaet)formData.maengel[i].prioritaet='4';
+    }
+    syncVerteiler();
+    return{
+        id:currentBegehungId||generateId(),
+        unternehmen:document.getElementById('f-unternehmen').value,
+        strasse:document.getElementById('f-strasse').value,
+        ort:document.getElementById('f-ort').value,
+        datum:document.getElementById('f-datum').value,
+        teilnehmende:getTeilnehmende(),
+        maengel:formData.maengel.filter(function(m){return m!==null;}),
+        verteiler:formData.verteiler||[],
+        erstelltAm:new Date().toISOString()
+    };
+}
 function speichereBegehung(){var data=sammleBegehungsDaten();if(!data.unternehmen){showToast('⚠️ Bitte Unternehmen angeben');return;}if(currentBegehungId){var idx=-1;for(var i=0;i<begehungen.length;i++){if(begehungen[i].id===currentBegehungId){idx=i;break;}}if(idx!==-1)begehungen[idx]=data;else begehungen.unshift(data);}else{currentBegehungId=data.id;begehungen.unshift(data);}localStorage.setItem('begehungen',JSON.stringify(begehungen));showToast('✅ Begehung gespeichert');}
 function deleteBegehung(id){showConfirm('Begehung löschen?',function(){begehungen=begehungen.filter(function(b){return b.id!==id;});localStorage.setItem('begehungen',JSON.stringify(begehungen));renderBegehungsListe();showToast('🗑️ Gelöscht');});}
 
+// ===== PDF =====
 function exportPDF(){var d=sammleBegehungsDaten();if(!d.unternehmen){showToast('⚠️ Bitte Unternehmen angeben');return;}generatePDF(d);}
 function exportBegehungPDF(id){var d=null;for(var i=0;i<begehungen.length;i++){if(begehungen[i].id===id){d=begehungen[i];break;}}if(d)generatePDF(d);}
 
@@ -686,20 +1046,42 @@ function generatePDF(data){
     var cG=[47,133,90],cGL=[240,255,244],cGB=[198,246,213],cD=[26,32,44],cGr=[113,128,150];
     function addFooter(){doc.setFontSize(7.5);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text('Begehungsprotokoll · '+(data.unternehmen||''),margin,pageH-8);doc.text('Seite '+doc.internal.getCurrentPageInfo().pageNumber,pageW-margin,pageH-8,{align:'right'});doc.setDrawColor(cGB[0],cGB[1],cGB[2]);doc.setLineWidth(0.3);doc.line(margin,pageH-12,pageW-margin,pageH-12);}
     function checkPage(n){n=n||20;if(y+n>pageH-18){addFooter();doc.addPage();y=20;}}
+
+    // LOGO
     var logoDrawH=0;
     if(einstellungen.logo){try{var li=new Image();li.src=einstellungen.logo;var mW=45,mH=18,dW=mW,dH=mH;if(li.naturalWidth&&li.naturalHeight){var r=li.naturalWidth/li.naturalHeight;if(r>mW/mH){dW=mW;dH=mW/r;}else{dH=mH;dW=mH*r;}}doc.addImage(einstellungen.logo,'AUTO',pageW-margin-dW,y,dW,dH,undefined,'FAST');logoDrawH=dH;}catch(e){}}
+
+    // TITEL
     doc.setFontSize(24);doc.setTextColor(cG[0],cG[1],cG[2]);doc.setFont(undefined,'bold');doc.text('Begehungsprotokoll',margin,y+8);y+=Math.max(18,logoDrawH+4);
     doc.setDrawColor(cG[0],cG[1],cG[2]);doc.setLineWidth(0.8);doc.line(margin,y,pageW-margin,y);y+=8;
+
+    // STAMMDATEN
     doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('STAMMDATEN',margin+4,y+5);y+=11;
     var stammdaten=[['Unternehmen',data.unternehmen||'-'],['Adresse',[data.strasse,data.ort].filter(Boolean).join(', ')||'-'],['Datum',formatDate(data.datum)]];
     stammdaten.forEach(function(item){doc.setFontSize(8.5);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text(item[0]+':',margin,y);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'bold');doc.text(item[1],margin+28,y);y+=6;});y+=6;
+
+    // TEILNEHMENDE
     var tn=data.teilnehmende||data.teilnehmer||[];
-    if(tn.length){checkPage(35);doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('TEILNEHMENDE',margin+4,y+5);y+=10;doc.autoTable({startY:y,head:[['Name','Funktion','Firma']],body:tn.map(function(t){return[t.name||'',t.funktion||'',t.firma||''];}),styles:{fontSize:8.5,cellPadding:3.5},headStyles:{fillColor:cGL,textColor:cG,fontStyle:'bold',lineColor:cGB,lineWidth:0.3},alternateRowStyles:{fillColor:[249,250,251]},bodyStyles:{lineColor:[230,235,240],lineWidth:0.2},margin:{left:margin,right:margin},tableWidth:contentW});y=doc.lastAutoTable.finalY+8;}
-    checkPage(60);doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('LEGENDE PRIORITÄTEN',margin+4,y+5);y+=11;
+    if(tn.length){
+        checkPage(35);
+        doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('TEILNEHMENDE',margin+4,y+5);y+=10;
+        doc.autoTable({startY:y,head:[['Name','Funktion','Firma']],body:tn.map(function(t){return[t.name||'',t.funktion||'',t.firma||''];}),styles:{fontSize:8.5,cellPadding:3.5},headStyles:{fillColor:cGL,textColor:cG,fontStyle:'bold',lineColor:cGB,lineWidth:0.3},alternateRowStyles:{fillColor:[249,250,251]},bodyStyles:{lineColor:[230,235,240],lineWidth:0.2},margin:{left:margin,right:margin},tableWidth:contentW});
+        y=doc.lastAutoTable.finalY+8;
+    }
+
+    // LEGENDE
+    checkPage(60);
+    doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('LEGENDE PRIORITÄTEN',margin+4,y+5);y+=11;
     PRIORITAETEN.forEach(function(p){checkPage(8);doc.setFillColor(p.rgb[0],p.rgb[1],p.rgb[2]);doc.circle(margin+4,y+1.5,3,'F');doc.setFontSize(8.5);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'normal');doc.text(p.label,margin+10,y+2.5);y+=7;});y+=4;
-    checkPage(30);doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('ALLGEMEINER HINWEIS',margin+4,y+5);y+=11;
+
+    // HINWEIS
+    checkPage(30);
+    doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('ALLGEMEINER HINWEIS',margin+4,y+5);y+=11;
     var hinweisLines=doc.splitTextToSize(ALLGEMEINER_HINWEIS,contentW);checkPage(hinweisLines.length*4.5+6);doc.setFontSize(8);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'normal');doc.text(hinweisLines,margin,y);y+=hinweisLines.length*4.5+10;
-    checkPage(20);doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('FESTSTELLUNGEN',margin+4,y+5);y+=12;
+
+    // FESTSTELLUNGEN
+    checkPage(20);
+    doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('FESTSTELLUNGEN',margin+4,y+5);y+=12;
     var aktiveMaengel=(data.maengel||[]).filter(function(m){return m!==null;});
     aktiveMaengel.forEach(function(m,i){
         var prioObj=getPrioByWert(m.prioritaet||'4'),pc=prioObj.rgb;
@@ -716,23 +1098,43 @@ function generatePDF(data){
         if(m.fotos&&m.fotos.length){var fotos=m.fotos,zeilen=[],i2=0;while(i2<fotos.length){var fi=fotos[i2];var isHoch=(typeof fi==='object'&&fi.hochformat!==undefined)?fi.hochformat:false;var perRow=isHoch?3:2;var zeile=[];for(var j=0;j<perRow&&i2<fotos.length;j++){zeile.push(fotos[i2]);i2++;}zeilen.push(zeile);}zeilen.forEach(function(zeile){if(!zeile.length)return;var isHochZ=(typeof zeile[0]==='object'&&zeile[0].hochformat!==undefined)?zeile[0].hochformat:false;var gap=3,fotoW,fotoH;if(isHochZ){fotoW=(contentW-(gap*2))/3;fotoH=fotoW*(4/3);}else{fotoW=(contentW-gap)/2;fotoH=fotoW*(3/4);}checkPage(fotoH+6);var fX=margin;zeile.forEach(function(fi2){var url=(typeof fi2==='object')?fi2.dataUrl:fi2;if(!url)return;try{doc.addImage(url,'AUTO',fX,y,fotoW,fotoH,undefined,'FAST');}catch(e){}fX+=fotoW+gap;});y+=fotoH+5;});y+=2;}
         if(i<aktiveMaengel.length-1){checkPage(6);doc.setDrawColor(cGB[0],cGB[1],cGB[2]);doc.setLineWidth(0.3);doc.line(margin,y,pageW-margin,y);y+=8;}
     });
-    checkPage(60);y+=4;doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('PROTOKOLL ERSTELLT DURCH',margin+4,y+5);y+=11;
+
+    // PROTOKOLL ERSTELLT DURCH
+    checkPage(70);y+=4;
+    doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('PROTOKOLL ERSTELLT DURCH',margin+4,y+5);y+=11;
     var colW=contentW/2-4,sY=y;
     var linke=[['Name',einstellungen.name],['Unternehmen',einstellungen.firma],['Anschrift',einstellungen.anschrift]];
     var rechte=[['E-Mail',einstellungen.email],['Telefon',einstellungen.telefon],['Datum',formatDate(data.datum)]];
     linke.forEach(function(item){doc.setFontSize(7.5);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text(item[0],margin,y);doc.setFontSize(8.5);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'bold');doc.text(item[1]||'-',margin,y+4.5);y+=12;});
     y=sY;rechte.forEach(function(item){doc.setFontSize(7.5);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text(item[0],margin+colW+8,y);doc.setFontSize(8.5);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'bold');doc.text(item[1]||'-',margin+colW+8,y+4.5);y+=12;});
     y=sY+3*12+6;
-    checkPage(30);doc.setFontSize(8);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text('Unterschrift:',margin,y);y+=4;
+
+    // UNTERSCHRIFT
+    checkPage(30);
+    doc.setFontSize(8);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.setFont(undefined,'normal');doc.text('Unterschrift:',margin,y);y+=4;
     if(einstellungen.unterschrift){try{var ui=new Image();ui.src=einstellungen.unterschrift;var umW=60,umH=20,udW=umW,udH=umH;if(ui.naturalWidth&&ui.naturalHeight){var ur=ui.naturalWidth/ui.naturalHeight;if(ur>umW/umH){udW=umW;udH=umW/ur;}else{udH=umH;udW=umH*ur;}}doc.addImage(einstellungen.unterschrift,'AUTO',margin,y,udW,udH,undefined,'FAST');y+=udH+2;}catch(e){y+=18;}}else{y+=18;}
     doc.setDrawColor(180,180,180);doc.setLineWidth(0.3);doc.line(margin,y,margin+70,y);y+=4;
     doc.setFontSize(7.5);doc.setTextColor(cGr[0],cGr[1],cGr[2]);doc.text(einstellungen.name||'',margin,y);
     if(einstellungen.funktion){y+=4;doc.setFontSize(7);doc.text(einstellungen.funktion,margin,y);}
+    y+=8;
+
+    // VERTEILER
+    var verteilerListe=data.verteiler||[];
+    if(verteilerListe.length){
+        checkPage(20);
+        doc.setFillColor(cG[0],cG[1],cG[2]);doc.roundedRect(margin,y,contentW,7,1.5,1.5,'F');doc.setFontSize(8.5);doc.setTextColor(255,255,255);doc.setFont(undefined,'bold');doc.text('VERTEILER',margin+4,y+5);y+=11;
+        verteilerListe.forEach(function(email){
+            checkPage(6);
+            doc.setFontSize(8.5);doc.setTextColor(cD[0],cD[1],cD[2]);doc.setFont(undefined,'normal');doc.text(email,margin,y);y+=6;
+        });
+    }
+
     addFooter();
     doc.save('Begehungsprotokoll_'+(data.unternehmen||'Export').replace(/[^a-z0-9äöüß]/gi,'_')+'_'+(data.datum||'')+'.pdf');
     showToast('✅ PDF wird heruntergeladen');
 }
 
+// ===== UTILS =====
 function generateId(){return Date.now().toString(36)+Math.random().toString(36).substr(2,9);}
 function formatDate(d){if(!d)return'-';try{return new Date(d+'T12:00:00').toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});}catch(e){return d;}}
 function escHtml(str){return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
